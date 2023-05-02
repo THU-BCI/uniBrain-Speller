@@ -1,4 +1,4 @@
-# uniBrain-Speller
+# uniBrain Speller
 
 ## Introduction
 
