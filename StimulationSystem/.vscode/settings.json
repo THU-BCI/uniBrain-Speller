@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "C:\\Users\\shinanlin\\anaconda3\\envs\\online\\python.exe",
+    "debug.allowBreakpointsEverywhere": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1F3301",
+        "titleBar.activeBackground": "#2B4801",
+        "titleBar.activeForeground": "#F2FEE0"
+    }
+}
