@@ -224,7 +224,7 @@ def create_pdf_main(win):
 
     # Create the report with a timestamp in the filename
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    report_filename = f"report_{current_time}.pdf"
+    report_filename = f"report_{win.config.MODE}_{current_time}.pdf"
     address = os.path.join(win.config.resultPath, win.config.personName, 'report', report_filename)
     create_pdf_report(data, address)
 
