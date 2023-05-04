@@ -1,0 +1,77 @@
+,epochINX,result,resultChar,winLEN,subject,ISI,paradigm
+0,1,40,",",0.8,Toto Chin,0.5,ssvep
+1,1,32,⇧,0.8,Toto Chin,0.5,ssvep
+2,2,32,⇧,0.8,Toto Chin,0.5,ssvep
+3,1,19,I,0.8,Toto Chin,0.5,ssvep
+4,2,19,I,0.8,Toto Chin,0.5,ssvep
+5,3,19,I,0.8,Toto Chin,0.5,ssvep
+6,1,43, ,0.8,Toto Chin,0.5,ssvep
+7,2,43, ,0.8,Toto Chin,0.5,ssvep
+8,3,43, ,0.8,Toto Chin,0.5,ssvep
+9,4,43, ,0.8,Toto Chin,0.5,ssvep
+10,1,35,C,0.8,Toto Chin,0.5,ssvep
+11,1,11,←,0.8,Toto Chin,0.5,ssvep
+12,2,11,←,0.8,Toto Chin,0.5,ssvep
+13,1,4,4,0.8,Toto Chin,0.5,ssvep
+14,2,4,4,0.8,Toto Chin,0.5,ssvep
+15,3,4,4,0.8,Toto Chin,0.5,ssvep
+16,1,11,←,0.8,Toto Chin,0.5,ssvep
+17,2,11,←,0.8,Toto Chin,0.5,ssvep
+18,3,11,←,0.8,Toto Chin,0.5,ssvep
+19,4,11,←,0.8,Toto Chin,0.5,ssvep
+20,1,31,↵,0.8,Toto Chin,0.5,ssvep
+21,1,11,←,0.8,Toto Chin,0.5,ssvep
+22,2,11,←,0.8,Toto Chin,0.5,ssvep
+23,1,11,←,0.8,Toto Chin,0.5,ssvep
+24,2,11,←,0.8,Toto Chin,0.5,ssvep
+25,3,11,←,0.8,Toto Chin,0.5,ssvep
+26,1,30,L,0.8,Toto Chin,0.5,ssvep
+27,2,30,L,0.8,Toto Chin,0.5,ssvep
+28,3,30,L,0.8,Toto Chin,0.5,ssvep
+29,4,30,L,0.8,Toto Chin,0.5,ssvep
+30,1,36,V,0.8,Toto Chin,0.5,ssvep
+31,1,14,E,0.8,Toto Chin,0.5,ssvep
+32,2,14,E,0.8,Toto Chin,0.5,ssvep
+33,1,1,1,0.8,Toto Chin,0.5,ssvep
+34,2,1,1,0.8,Toto Chin,0.5,ssvep
+35,3,1,1,0.8,Toto Chin,0.5,ssvep
+36,1,23,S,0.8,Toto Chin,0.5,ssvep
+37,2,23,S,0.8,Toto Chin,0.5,ssvep
+38,3,23,S,0.8,Toto Chin,0.5,ssvep
+39,4,23,S,0.8,Toto Chin,0.5,ssvep
+40,1,11,←,0.8,Toto Chin,0.5,ssvep
+41,1,32,⇧,0.8,Toto Chin,0.5,ssvep
+42,2,32,⇧,0.8,Toto Chin,0.5,ssvep
+43,1,19,I,0.8,Toto Chin,0.5,ssvep
+44,2,19,I,0.8,Toto Chin,0.5,ssvep
+45,3,19,I,0.8,Toto Chin,0.5,ssvep
+46,1,43, ,0.8,Toto Chin,0.5,ssvep
+47,2,43, ,0.8,Toto Chin,0.5,ssvep
+48,3,43, ,0.8,Toto Chin,0.5,ssvep
+49,4,43, ,0.8,Toto Chin,0.5,ssvep
+50,1,20,O,0.8,Toto Chin,0.5,ssvep
+51,1,36,V,0.8,Toto Chin,0.5,ssvep
+52,2,36,V,0.8,Toto Chin,0.5,ssvep
+53,1,14,E,0.8,Toto Chin,0.5,ssvep
+54,2,14,E,0.8,Toto Chin,0.5,ssvep
+55,3,14,E,0.8,Toto Chin,0.5,ssvep
+56,1,43, ,0.8,Toto Chin,0.5,ssvep
+57,2,43, ,0.8,Toto Chin,0.5,ssvep
+58,3,43, ,0.8,Toto Chin,0.5,ssvep
+59,4,43, ,0.8,Toto Chin,0.5,ssvep
+60,1,16,T,0.8,Toto Chin,0.5,ssvep
+61,1,32,⇧,0.8,Toto Chin,0.5,ssvep
+62,2,32,⇧,0.8,Toto Chin,0.5,ssvep
+63,1,27,H,0.8,Toto Chin,0.5,ssvep
+64,2,27,H,0.8,Toto Chin,0.5,ssvep
+65,3,27,H,0.8,Toto Chin,0.5,ssvep
+66,1,32,⇧,0.8,Toto Chin,0.5,ssvep
+67,2,32,⇧,0.8,Toto Chin,0.5,ssvep
+68,3,32,⇧,0.8,Toto Chin,0.5,ssvep
+69,4,32,⇧,0.8,Toto Chin,0.5,ssvep
+70,1,41,.,0.8,Toto Chin,0.5,ssvep
+71,1,41,.,0.8,Toto Chin,0.5,ssvep
+72,2,41,.,0.8,Toto Chin,0.5,ssvep
+73,1,20,O,0.8,Toto Chin,0.5,ssvep
+74,2,20,O,0.8,Toto Chin,0.5,ssvep
+75,3,20,O,0.8,Toto Chin,0.5,ssvep
