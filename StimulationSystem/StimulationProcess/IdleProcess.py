@@ -6,45 +6,47 @@ from psychopy import event, visual, core
 
 
 class IdleProcess(BasicStimulationProcess):
-    def __init__(self) -> None:
+    def __init__(self):
         super().__init__()
 
-    def change(self):
 
+    def change(self):
+        """Switches to the prepare process."""
         self.controller.currentProcess = self.controller.prepareProcess
 
-    def run(self):
-        
-        # 本节实验结束界面
-        self._idleInterface()
-        
-        if self.controller.end == False:
-        # 等待键盘输入继续
-            if self.MODE != "PREVIEW": # skip the idle interface in preview mode
-                event.waitKeys(keyList=['space'])
-                # A=1
 
-        # 更新当前block的信息
+    def run(self):
+        """Runs the idle process."""
+        # Display end-of-section interface
+        self._idleInterface()
+
+        if not self.controller.end:
+            # Wait for keyboard input to continue
+            if self.MODE != "PREVIEW":  # skip the idle interface in preview mode
+                event.waitKeys(keyList=['space'])
+
+            # Update current block information
             self.update()
             self.eventController.clearEvent()
 
         core.wait(1)
-        
+
         self.change()
 
-    def _idleInterface(self):
 
+    def _idleInterface(self):
+        """Displays the idle interface."""
         self.w.flip()
         if self.controller.currentBlockINX == 0:
-            if self.MODE =="TRAIN":
+            if self.MODE == "TRAIN":
                 text = 'Train mode is about to begin, please remain calm.\n\nPress the spacebar to continue.'
-            elif self.MODE =="TEST":
+            elif self.MODE == "TEST":
                 text = 'Test mode is about to begin, please remain calm.\n\nPress the spacebar to continue.'
-            elif self.MODE =="USE":
+            elif self.MODE == "USE":
                 text = 'Usage mode is about to begin, please remain calm.\n\nPress the spacebar to continue.'
-            elif self.MODE =="DEBUG":
+            elif self.MODE == "DEBUG":
                 text = 'Debug mode is about to begin, please remain calm.\n\nPress the spacebar to continue.'
-            else: # PREVIEW  
+            else:  # PREVIEW
                 text = ""
         elif self.controller.currentBlockINX == len(self.cueIndices):
             text = 'The process is done!\n\nThank you.'
@@ -60,12 +62,11 @@ class IdleProcess(BasicStimulationProcess):
         self.controller.endBlock = False
         self.checkEscapeKey()
 
-        pass
 
     def update(self):
-        
+        """Updates the current block information."""
         self.w.flip()
-        
+
         self.controller.epochThisBlock = 0
 
         currentBlockINX = self.controller.currentBlockINX
@@ -77,27 +78,29 @@ class IdleProcess(BasicStimulationProcess):
         self.controller.feedback = None
 
         self.initFrame.draw()
-        
+
         if self.MODE != "PREVIEW" and self.MODE != "USE":
             self.controller.dialogue = self.drawDialogue(
                 text, color='gray', fillColor=None)
             self.controller.dialogue.draw()
 
         self.w.flip()
-        
+
         self.controller.w = self.w
         self.controller.endBlock = False
-        
+
         if self.MODE != "PREVIEW" and self.MODE != "USE":
             self.controller.feedback = self.drawDialogue(
                 "", color='White', fillColor=None)
         return
 
+
     def _openEyes(self):
+        """Displays the 'please focus on the center of the screen' message."""
         self.w.flip()
 
         text = visual.TextStim(
-            self.w, pos=[0, 0], text='请注释屏幕中央的标记，保持视线稳定',
+            self.w, pos=[0, 0], text='Please focus on the center of the screen and maintain a steady gaze',
             color=(255, 255, 255), colorSpace='rgb255'
         )
         text.draw()
@@ -116,12 +119,11 @@ class IdleProcess(BasicStimulationProcess):
         self.w.flip()
         core.wait(1)
 
-        pass
 
     def _closeEyes(self):
-
+        """Displays the 'please close your eyes' message."""
         text = visual.TextStim(
-            self.w, pos=[0, 0], text='请闭眼',
+            self.w, pos=[0, 0], text='Please close your eyes',
             color=(255, 255, 255), colorSpace='rgb255'
         )
         text.draw()
@@ -129,5 +131,3 @@ class IdleProcess(BasicStimulationProcess):
         self.w.flip()
 
         core.wait(1)
-
-        pass

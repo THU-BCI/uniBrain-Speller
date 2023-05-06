@@ -1,117 +1,93 @@
-import time 
+import time
 from StimulationSystem.StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
-from psychopy import visual, core, event
+from psychopy import core
 import datetime
-from psychopy.visual.circle import Circle
-# import logging
-
-# # configure logging
-# logger = logging.getLogger(__name__)
-# logger.setLevel(logging.INFO)
-# handler = logging.FileHandler('sti_elapsed_time.log')
-# handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-# logger.addHandler(handler)
 
 
 class StimulateProcess(BasicStimulationProcess):
+    """
+    The StimulateProcess class is responsible for presenting the flickering stimuli to the participant.
+    It inherits from the BasicStimulationProcess abstract base class.
+    
+    Attributes:
+        Inherits attributes from the BasicStimulationProcess class.
+        
+    Methods:
+        __init__(): Initializes the StimulateProcess instance.
+        update(): Updates the state of the stimulation process.
+        change(result): Changes the state of the process to the finish process and clears events.
+        run(): Main logic of the stimulation process.
+        _checkBlock(): Checks whether the current block of cues is finished.
+    """
     def __init__(self) -> None:
         super().__init__()
 
     def update(self):
-        
+        # Check if the current block of stimuli has ended and update the endBlock attribute of the controller
         self.controller.endBlock = self._checkBlock()
-        
-        
+
+        # Draw the initial frame and display dialogue and feedback
         self.initFrame.draw()
-        if self.MODE !="PREVIEW" and self.MODE != "USE":
+        if self.MODE != "PREVIEW" and self.MODE != "USE":
             self.controller.dialogue.draw()
             self.controller.feedback.draw()
         self.w.flip()
 
-        # 增加另一个epoch
+        # Increment the current epoch index and the number of epochs in the current block
         self.controller.currentEpochINX += 1
-        # 增加另一个epoch
         self.controller.epochThisBlock += 1
-        pass
 
-        
-    def change(self,result):
-        
+    def change(self, result):
+        # Change the current process to the finish process and store the result
         self.controller.currentProcess = self.controller.finishProcess
         self.controller.currentResult = result
-        # 这里无需改变状态，因为在收到数据之后已经改变过了
-        # self.eventController.sendEvent(251)
         self.eventController.clearEvent()
 
 
-
     def run(self):
-        
+        # Main method to run the stimulation process
         controller = self.controller
         self.w = controller.w
-        
-        # stride Text
-        if self.strideText != None:
+
+        if self.strideText is not None:
             self.strideText.setText(str(self.controller.key_list.stride))
 
-
-    
-            
-
-
-        
-        
         message = 'STRD'
-        
-        # print('\nStimulateProcess triggered Operation to identify incoming data, execution time: {}\n'.format(datetime.datetime.now()))
-        
-        
-        
+
         if self.MODE != 'PREVIEW':
             self.messenger.send_exchange_message(message)
-        
-        # warm up
+
         for i in range(10):
             self.w.flip(False)
-        
-        # do while loop only when self.sync_mode != "Normal", run until self.MODE != 'PREVIEW'
+
         while self.controller.currentProcess is self and self.controller.end == False:
-            
-            # core.wait(0.2)
-            # frameINX = 0
+
             startTime = core.getTime()
-            # self.trigger_start_time = core.getTime()
-
-                
-            # core.wait(0.01)
             frameINX = 0
-            if self.sync_mode == "Normal" or  self.MODE == "TRAIN" and self.controller.end == False:
 
-                    
+            if self.sync_mode == "Normal" or self.MODE == "TRAIN" and self.controller.end == False:
+
                 droppedFrames = self.w.nDroppedFrames
                 troubled_frame = []
                 self.w.flip(False)
-                # Frame dropping check initialization
                 self.w.recordFrameIntervals = True
                 self.w.flip(False)
-                
-                while frameINX < len(self.frameSet) :
-                    
+
+                while frameINX < len(self.frameSet):
+
                     self.frameSet[frameINX].draw()
                     self.w.flip(False)
-                    # self.w.flip()
-                    
+
                     if droppedFrames != self.w.nDroppedFrames:
                         troubled_frame.append(frameINX)
                         droppedFrames = self.w.nDroppedFrames
-                    
+
                     if frameINX == 0:
                         if self.MODE != 'PREVIEW':
-                            # send trigger
                             self.eventController.sendEvent(self.controller.cueEvent)
-                    
+
                     frameINX += 1
-                    
+
                 self.w.recordFrameIntervals = False
                 if droppedFrames > 0:
                     subject_name = self.targetPos[self.controller.cueId].personName
@@ -121,41 +97,34 @@ class StimulateProcess(BasicStimulationProcess):
                     log_frame_drops(subject_name, droppedFrames, troubled_frame, block, index, cue_id)
                 print('Overall, %i frames were dropped.' % self.w.nDroppedFrames)
                 self.w.nDroppedFrames = 0
-
-
-
-
-
+                
             else:
-                # able to break from loop once the result is received
+                
                 while self.controller.currentProcess is self and self.controller.end == False:
                     frameINX = 0
-                    
-                    
+
                     droppedFrames = self.w.nDroppedFrames
                     troubled_frame = []
                     self.w.flip(False)
-                    # Frame dropping check initialization
                     self.w.recordFrameIntervals = True
                     self.w.flip(False)
 
-                    while frameINX < len(self.frameSet) :
+
+                    while frameINX < len(self.frameSet) and self.controller.currentProcess is self:
                         
                         self.frameSet[frameINX].draw()
                         self.w.flip(False)
-                        # self.w.flip()
-                        
+
                         if droppedFrames != self.w.nDroppedFrames:
                             troubled_frame.append(frameINX)
                             droppedFrames = self.w.nDroppedFrames
-                        
+
                         if frameINX == 0:
                             if self.MODE != 'PREVIEW':
-                                # send trigger
                                 self.eventController.sendEvent(self.controller.cueEvent)
-                        
+
                         frameINX += 1
-                        
+
                     self.w.recordFrameIntervals = False
                     if droppedFrames > 0:
                         subject_name = self.targetPos[self.controller.cueId].personName
@@ -163,57 +132,67 @@ class StimulateProcess(BasicStimulationProcess):
                         index = self.controller.currentEpochINX
                         cue_id = self.controller.cueId
                         log_frame_drops(subject_name, droppedFrames, troubled_frame, block, index, cue_id)
-                    print('Overall, %i frames were dropped.' % self.w.nDroppedFrames)
-                    self.w.nDroppedFrames = 0
+                print('Overall, %i frames were dropped.' % self.w.nDroppedFrames)
+                self.w.nDroppedFrames = 0
 
-                    
             self.checkEscapeKey()
-            
+
             endTime = core.getTime()
             message = "STI ended in #{:.3f}# seconds".format(endTime - startTime)
             print(message)
-            # logger.info(message)
-            
+
             self.w.flip()
-            
+
             if self.controller.key_list.two_phase_on:
                 self.twoPhaseBox.draw()
             self.initFrame.draw()
-            
-            if self.strideText != None:
+
+            if self.strideText is not None:
                 self.strideText.draw()
-            
+
             if self.MODE != "PREVIEW" and self.MODE != "USE":
                 self.controller.dialogue.draw()
                 self.controller.feedback.draw()
             self.w.flip(False)
-            
+
             self.eventController.clearEvent()
-            
+
             if self.sync_mode == "Normal" or self.MODE == "TRAIN":
-                break # only run maximum one time
-        
-        # while end
-        
+                break
+
         if self.MODE != 'PREVIEW':
             while self.controller.currentProcess is self:
-                # 如果刺激结束了，还没有收到结果，就先进入等待
                 core.wait(0.01)
         else:
             self.change(None)
-            
+
         self.update()
         
         
     def _checkBlock(self):
-
+        # Check if the current block of stimuli has ended, increment the block index if so
         if self.controller.blockCueINX == []:
             self.controller.currentBlockINX += 1
             return True
         else:
             return False
         
+        
 def log_frame_drops(subject_name, no_of_frames, dropped_frames, block, index, cue_id):
+    """
+    Log information about dropped frames during the stimulation process.
+    
+    Args:
+        subject_name (str): The name of the subject.
+        no_of_frames (int): The total number of frames in the stimulation process.
+        dropped_frames (list): A list of indices of the dropped frames.
+        block (int): The current block index of the stimulation process.
+        index (int): The current epoch index within the block.
+        cue_id (int): The current cue ID.
+        
+    Returns:
+        None
+    """
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_data = {
         "subject_name": subject_name,
