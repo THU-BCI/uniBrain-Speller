@@ -1,4 +1,4 @@
-from StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
+from StimulationSystem.StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
 from psychopy.visual.rect import Rect
 from psychopy.visual.circle import Circle
 from psychopy import core
