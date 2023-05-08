@@ -1,8 +1,11 @@
 from abc import ABCMeta, abstractmethod
+# from psychopy.visual.circle import Circle
 from psychopy import visual
 from psychopy.hardware import keyboard
+# from psychopy import core, event
 from EventController import EventController
 
+import time
 
 class BasicStimulationProcess(metaclass=ABCMeta):
     """

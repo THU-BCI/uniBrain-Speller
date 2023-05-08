@@ -1,8 +1,31 @@
 from numpy import place
 from StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
+# from psychopy.visual.rect import Rect
+import time
+import logging
 from psychopy.visual.rect import Rect
 from psychopy.visual.circle import Circle
-from psychopy import core
+from psychopy import visual,core
+
+# Configure logger for FinishProcess
+finish_process_logger = logging.getLogger('FinishProcess')
+finish_process_logger.setLevel(logging.INFO)
+finish_process_handler = logging.FileHandler('finish_process_elapsed_time.log')
+finish_process_handler.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+finish_process_logger.addHandler(finish_process_handler)
+
+class FinishProcess(BasicStimulationProcess):
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.log = finish_process_logger
+
+        
+
+
+class PrepareProcess(BasicStimulationProcess):
+    def __init__(self) -> None:
+        super().__init__()
 
     def change(self):
 
