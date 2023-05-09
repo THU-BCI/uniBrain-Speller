@@ -11,6 +11,40 @@ import numpy as np
 import math
 
 class StimulationController:
+    """
+    The StimulationController class manages the entire stimulation process and its different stages.
+    It initializes, resets, and runs the processes, as well as handling the graphical interface and user interaction.
+
+    Attributes:
+        initialProcess (BasicStimulationProcess): The initial process of the stimulation.
+        prepareProcess (PrepareProcess): The process to prepare the stimulation.
+        stimulateProcess (StimulateProcess): The process to perform the stimulation.
+        idleProcess (IdleProcess): The idle process between blocks.
+        finishProcess (FinishProcess): The process to finish the stimulation.
+        currentProcess (BasicStimulationProcess): The current stimulation process.
+        w (psychopy.visual.window.Window): The Psychopy window for displaying stimuli.
+        endBlock (bool): Indicates if the current block has ended.
+        endSession (None): Placeholder for endSession attribute.
+        cueId (None): Placeholder for cueId attribute.
+        blockCues (None): Placeholder for blockCues attribute.
+        blockCueText (None): Placeholder for blockCueText attribute.
+        currentEpochINX (int): The index of the current epoch.
+        epochThisBlock (int): The index of the epoch within the current block.
+        currentBlockINX (int): The index of the current block.
+        currentResult (None): Placeholder for currentResult attribute.
+        feedback (None): Placeholder for feedback attribute.
+        end (bool): Indicates if the stimulation has ended.
+        timeStamp (None): Placeholder for timeStamp attribute.
+        twoPhaseBox (None): Placeholder for twoPhaseBox attribute.
+        key_list (KeyList): The list of keys used for user interaction.
+        progress_manager (ProgressManager): Manages the progress of loading pictures.
+
+    Methods:
+        initial(): Initializes the StimulationController.
+        resetProcess(): Resets the StimulationController processes.
+        loadPics(): Loads the pictures for the stimulation.
+        run(): Executes the current stimulation process.
+    """
     def __init__(self):
         # 各个状态
         self.initialProcess = None
@@ -57,7 +91,10 @@ class StimulationController:
 
 
     def initial(self, config, messenger, progress_manager = None, loadPicsBool = True):
-        
+        """
+        Initializes the StimulationController with the given configuration, messenger, and progress manager.
+        Optionally loads pictures.
+        """
         self.messager = messenger
         
         if loadPicsBool == True:
@@ -77,21 +114,23 @@ class StimulationController:
         return self
     
     def resetProcess(self,config,messenger):
+        """
+        Resets the processes associated with the StimulationController. 
+        """
         
-        
-        # 准备阶段：展示cue，展示上次结果
+        # Preparation stage: display cue, display last results
         self.prepareProcess = PrepareProcess()
         self.prepareProcess.initial(self, self.viewContainer, messenger)
 
-        # 开始刺激：刺激时展示cue
+        # Start stimulation: flickering and display cue during stimulation
         self.stimulateProcess = StimulateProcess()
         self.stimulateProcess.initial(self, self.viewContainer, messenger)
 
-        # 结束刺激：展示结果？
+        # End stimulation: display and output results
         self.finishProcess = FinishProcess()
         self.finishProcess.initial(self, self.viewContainer, messenger)
 
-        # Block间的空闲状态
+        # Idle state between Blocks
         self.idleProcess = IdleProcess()
         self.idleProcess.initial(self, self.viewContainer, messenger)
         
@@ -100,8 +139,9 @@ class StimulationController:
         
 
     def loadPics(self,config,progress_manager = None):
-    
-        addSTI = config.addSTI
+        """
+        Loads the necessary pictures for the stimulation process.
+        """
         
         x_resolution, y_resolution = config.resolution
         
@@ -308,6 +348,9 @@ class StimulationController:
         return self
         
     def run(self):
+        """
+        Runs the current process associated with the StimulationController.
+        """
         if self.end == False:
             self.currentProcess.run()
         else:
@@ -316,6 +359,20 @@ class StimulationController:
 
 
 def covert2psycho(rect_size,x,y,x_res = 1920,y_res = 1080):
+    """
+    Converts the given x and y coordinates to the corresponding PsychoPy coordinates.
+
+    Args:
+        rect_size (int): The size of the rectangle.
+        x (int): The x coordinate of the position.
+        y (int): The y coordinate of the position.
+        x_res (int, optional): The horizontal screen resolution. 
+        y_res (int, optional): The vertical screen resolution. 
+        (x_res, y_res) Defaults to the common size(1920, 1080)
+    
+    Returns:
+        list: A list containing the converted x, y coordinates.
+    """
     width = rect_size/2
     
     out_x = x-x_res/2 + width

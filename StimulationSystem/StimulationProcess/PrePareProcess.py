@@ -4,6 +4,19 @@ from psychopy.visual.circle import Circle
 from psychopy import core
 
 class PrepareProcess(BasicStimulationProcess):
+    """
+    The PrepareProcess class is responsible mainly for showing the cue and preparing the next flickering stimuli to the participant.
+    It inherits from the BasicStimulationProcess abstract base class.
+    
+    Attributes:
+        Inherits attributes from the BasicStimulationProcess class.
+        
+    Methods:
+        __init__(): Initializes the PrepareProcess instance.
+        change(): Changes the state of the process to the stimulate process.
+        run(): Main logic of the prepare process.
+        _showCue(id): Draws the initial texture and shows the result.
+    """
     def __init__(self) -> None:
         super().__init__()
 

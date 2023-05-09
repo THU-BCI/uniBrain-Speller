@@ -4,7 +4,24 @@ from psychopy import event, visual, core
 
 
 class IdleProcess(BasicStimulationProcess):
-    def __init__(self):
+    """
+    The IdleProcess class represents a resting state between loops of the stimulation process. 
+    It serves as a "crossroads" for determining the next steps in the process. It inherits from the 
+    BasicStimulationProcess abstract base class.
+    
+    Attributes:
+        Inherits attributes from the BasicStimulationProcess class.
+        
+    Methods:
+        __init__(): Initializes the IdleProcess instance.
+        change(): Changes the state of the process to the prepare process.
+        run(): Main logic of the idle process.
+        _idleInterface(): Displays the idle interface.
+        update(): Updates the current block information.
+        _openEyes(): Displays the 'please focus on the center of the screen' message.
+        _closeEyes(): Displays the 'please close your eyes' message.
+    """
+    def __init__(self) -> None:
         super().__init__()
 
 

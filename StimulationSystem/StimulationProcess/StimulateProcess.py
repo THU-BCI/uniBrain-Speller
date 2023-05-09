@@ -1,4 +1,3 @@
-import time
 from StimulationSystem.StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
 from psychopy import core
 import datetime

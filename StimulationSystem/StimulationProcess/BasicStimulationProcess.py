@@ -7,7 +7,20 @@ class BasicStimulationProcess:
     """
     BasicStimulationProcess is an abstract base class that defines the structure for the different 
     stimulation processes: Idle, Prepare, Stimulate, and Finish.
+    
+    Attributes:
+        twoPhaseBox: The two-phase box.
+        
+    Methods:
+        __init__(): Initializes the BasicStimulationProcess instance.
+        initial(controller, viewContainer, messenger): Initializes the process with the given controller, viewContainer, and messenger.
+        update(): Abstract method to update the state of the process.
+        change(): Abstract method to change the state of the process.
+        run(): Abstract method to run the main logic of the process.
+        drawDialogue(text, color, fillColor): Creates and returns a TextBox2 object with the specified text, color, and fillColor.
+        checkEscapeKey(): Checks if the escape key is pressed and sets the controller's end attribute to True if pressed.
     """
+    
     def __init__(self):
         self.twoPhaseBox = None
 

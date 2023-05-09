@@ -1,0 +1,14 @@
+,epochINX,event,eventChar,result,resultChar,winLEN,blockINX,subject,ISI,paradigm
+0,1,1,↖︎,7,↗︎,1.0,1,Kent,0.5,ssvep
+1,2,2,←,8,→,1.0,1,Kent,0.5,ssvep
+2,3,3,↙︎,7,↗︎,1.0,1,Kent,0.5,ssvep
+3,4,4,↑,2,←,1.0,1,Kent,0.5,ssvep
+4,5,5,L,6,↓,1.0,1,Kent,0.5,ssvep
+5,6,6,↓,12,+,1.0,1,Kent,0.5,ssvep
+6,7,7,↗︎,10,Drag,1.0,1,Kent,0.5,ssvep
+7,8,8,→,1,↖︎,1.0,1,Kent,0.5,ssvep
+8,9,9,↘︎,13,-,1.0,1,Kent,0.5,ssvep
+9,10,10,Drag,11,R,1.0,1,Kent,0.5,ssvep
+10,11,11,R,9,↘︎,1.0,1,Kent,0.5,ssvep
+11,12,12,+,9,↘︎,1.0,1,Kent,0.5,ssvep
+12,13,13,-,9,↘︎,1.0,1,Kent,0.5,ssvep

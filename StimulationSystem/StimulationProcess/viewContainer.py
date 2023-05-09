@@ -1,50 +1,66 @@
 class viewContainer():
-    # container 应该包含所有刺激所需的要素
+    
+    """
+    The viewContainer class contains all the elements required for the presentation of stimuli. They will be transfered to all the processes.
+    
+    Attributes:
+        w: The window object where all stimuli are displayed.
+        initFrame: The initial frame displayed when not in a stimulation state.
+        frameSet: A set of ImageStim objects representing the stimulation frames.
+        cue: An array of cue indices.
+        targetPos: The positions of the targets on the screen, used when displaying cues.
+        stringPos: The positions of the characters during online experiments (currently unused).
+        cueTime: The duration of cue display.
+        MODE: The run mode.
+        sync_mode: The synchronization mode.
+        key_list: The list of keys used for input.
+        strideText: The stride text.
+        twoPhaseBox: The two-phase box.
+        
+    Methods:
+        __init__(config): Initializes the viewContainer instance with the given config.
+        takeConfig(config): Configures the viewContainer instance with the given config.
+    """
     def __init__(self, config) -> None:
 
-        # w 代表window,所有的刺激都要在win上显示
+        # The window object where all stimuli are displayed.
         self.w = None
-        # initFrame代表初始帧,非刺激状态下都是这一帧
+        # The initial frame displayed when not in a stimulation state.
         self.initFrame = None
-        # frameSet是ImageStim的集合,是刺激帧
+        # A set of ImageStim objects representing the stimulation frames.
         self.frameSet = None
-        # cue应该是一串数组
+        # An array of cue indices.
         self.cue = None
-        # targetPos是每个目标在屏幕上的位置,显示cue的时候用得到
+        # The positions of the targets on the screen, used when displaying cues.
         self.targetPos = None
-        # stringPos是在线实验时候,字符的位置,暂时用不到
+        # The positions of the characters during online experiments (currently unused).
         self.stringPos = None
         self.cueTime = None
         
-        
-        # run mode
+        # Run mode.
         self.MODE = None
         self.sync_mode = None
-        # self.twoPhaseRectPos = None
-        # self.strideTextPos = None
         self.key_list = None
         
         self.strideText = None
         self.twoPhaseBox = None
-        
 
         self.takeConfig(config)
-        pass
 
     def takeConfig(self, config):
 
         self.paradigm = config.paradigm
-        # 索引
+        # Cue indices.
         self.cueIndices = config.cueIndices
-        # 标签
+        # Cue events.
         self.cueEvents = config.cueEvents
-        # 对应字符
+        # Corresponding characters.
         self.char = config.char
         
         self.events = config.events
         self.targetNUM = config.targetNUM
         self.blockNUM = config.blockNUM
-        # 显示的字符
+        # Displayed characters.
         self.displayChar = config.displayChar
         self.resolution = config.resolution
         self.cueTime = config.cueTime
@@ -54,9 +70,5 @@ class viewContainer():
         self.MODE = config.MODE
         self.sync_mode = config.sync_mode
         
-    
-        # self.twoPhaseRectPos =  config.twoPhaseRectPos
-        # self.strideTextPos = config.strideTextPos
-        
         self.key_list = config.key_list
-        pass
+
