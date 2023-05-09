@@ -20,8 +20,7 @@ class FinishProcess(BasicStimulationProcess):
         super().__init__()
         self.log = finish_process_logger
 
-        
-
+    
 
     def change(self):
 

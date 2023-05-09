@@ -1,8 +1,24 @@
+import time
+import os
+# get current directory
+current_path  = os.getcwd()
+# print(current_path)
+# relative path to add
+relative_path = "StimulationSystem"
+
+# join paths to get full path
+full_path = os.path.join(current_path, relative_path)
+
+# add the path to the system paths
+import sys
+sys.path.append(full_path)
+
 from StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
 from psychopy.visual.rect import Rect
 from psychopy.visual.circle import Circle
-from psychopy import core
-
+from psychopy.visual import TextBox2
+from psychopy import visual,core
+import matplotlib.pyplot as plt
 
 class PrepareProcess(BasicStimulationProcess):
     def __init__(self) -> None:
