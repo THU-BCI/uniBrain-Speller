@@ -1,11 +1,8 @@
-from numpy import place
-from StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
-# from psychopy.visual.rect import Rect
-import time
+from StimulationSystem.StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
 import logging
 from psychopy.visual.rect import Rect
 from psychopy.visual.circle import Circle
-from psychopy import visual,core
+from psychopy import core
 
 # Configure logger for FinishProcess
 finish_process_logger = logging.getLogger('FinishProcess')

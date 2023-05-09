@@ -3,16 +3,10 @@ from StimulationSystem.StimulationProcess.PrePareProcess import PrepareProcess
 from StimulationSystem.StimulationProcess.StimulateProcess import StimulateProcess
 from StimulationSystem.StimulationProcess.FinishProcess import FinishProcess
 from StimulationSystem.StimulationProcess.IdleProcess import IdleProcess
-from StimulationSystem.UICreator.stiConfig import stiConfig
-from StimulationSystem.UICreator.UIFactory import UIFactory
-from StimulationSystem.UICreator.StimTargetRect import StimTargetRect
-from psychopy import visual, logging
+from psychopy import visual
 from psychopy.visual.rect import Rect
-from psychopy import core
 import os
 import pickle
-from tqdm import tqdm
-import datetime
 import numpy as np
 import math
 

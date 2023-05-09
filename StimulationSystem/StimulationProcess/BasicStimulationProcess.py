@@ -1,13 +1,9 @@
-from abc import ABCMeta, abstractmethod
-# from psychopy.visual.circle import Circle
+from abc import abstractmethod
 from psychopy import visual
 from psychopy.hardware import keyboard
-# from psychopy import core, event
-from EventController import EventController
+from StimulationSystem.EventController import EventController
 
-import time
-
-class BasicStimulationProcess(metaclass=ABCMeta):
+class BasicStimulationProcess:
     """
     BasicStimulationProcess is an abstract base class that defines the structure for the different 
     stimulation processes: Idle, Prepare, Stimulate, and Finish.

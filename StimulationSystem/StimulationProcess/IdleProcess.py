@@ -1,7 +1,5 @@
-import time
 from typing import Text
-import numpy as np
-from StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
+from StimulationSystem.StimulationProcess.BasicStimulationProcess import BasicStimulationProcess
 from psychopy import event, visual, core
 
 
