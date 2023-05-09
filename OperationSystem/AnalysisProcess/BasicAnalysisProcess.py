@@ -25,13 +25,12 @@ class BasicAnalysisProcess:
         self.logger = logger
         
         
-        # 初始化算法：fbcca
+        # Initialize algorithm: fbcca or trca
         self.feature_algo = config.feature_algo
         self.targetNUM = config.targetNUM
-        # 训练 trial 数目
+        # Total trial count
         self.totalTargetNUM = config.blockNUM * config.targetNUM
-        # # 测试 trial 数目
-        # self.totalTargetNUM = config.blockNum * config.targetNUM
+        
         self.winLEN = config.winLEN
         self.srate = config.srate
         self.personName = config.personName
@@ -53,16 +52,15 @@ class BasicAnalysisProcess:
         
         
         self.prefix = config.prefix
-        
-        
-        current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
-        
-        # self.prefix_with_time = f"{self.prefix}{current_time}_"
         self.prefix_with_time = config.prefix_with_time
         self.progress_manager = progress_manager
         
+        
 
     def prepareFolder(self):
+        """
+        Prepare the folder structure for saving results.
+        """
         fatherAdd = self.resultPath
         sonAdd = os.path.join(fatherAdd,self.personName)
         if not os.path.exists(sonAdd):
@@ -77,21 +75,17 @@ class BasicAnalysisProcess:
 
     @abstractmethod
     def run(self):
-
+        """
+        Run the analysis process.
+        """
         pass
 
 
     @abstractmethod
     def getResult(self,data):
-        
-        
-        # DEBUG
-        # Save variables needed for TRCA model
-        # variables = {'data': data}
-        # checkpoint_path = "checkpoint_basicAnalysisProcess.pkl"
-        # with open(checkpoint_path, "wb+") as fp:
-        #     pickle.dump(variables, fp, protocol=pickle.HIGHEST_PROTOCOL)
-            
+        """
+        Get the result from the analysis process.
+        """
         result = self.algorithm.predict(data, self.p_value, self.sync_mode)
         return result[0]
 

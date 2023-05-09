@@ -1,5 +1,4 @@
 class viewContainer():
-    
     """
     The viewContainer class contains all the elements required for the presentation of stimuli. They will be transfered to all the processes.
     

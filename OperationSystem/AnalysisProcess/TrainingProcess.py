@@ -1,18 +1,5 @@
-
-# debug use
-import sys
-
-# Append the current directory to the system path
-sys.path.append('.OperationSystem')
-# DEBUG
-sys.path.append('C:\\Users\\taiwa\\Documents\\GitHub\\low-code-ssvep-bci\\OperationSystem')
-sys.path.append('C:\\Users\\taiwa\\Documents\\GitHub\\low-code-ssvep-bci')
-sys.path.append('.')
-
-from AnalysisProcess.BasicAnalysisProcess import BasicAnalysisProcess
-from AnalysisProcess.OperatorMethod.spatialFilter import TRCA,TDCA,fbCCA
-
-
+from OperationSystem.AnalysisProcess.BasicAnalysisProcess import BasicAnalysisProcess
+from OperationSystem.AnalysisProcess.OperatorMethod.spatialFilter import TRCA,TDCA,fbCCA
 import numpy as np
 import pandas as pd
 import pickle
@@ -22,91 +9,45 @@ import matplotlib.pyplot as plt
 import json
 import time
 
-
 class TrainingProcess(BasicAnalysisProcess):
     def __init__(self) -> None:
         self.controller = None
         super().__init__()
 
-
     def run(self):
 
-        # 训练过程,也会把event 标签传过来
+        # Training process, event labels are also passed in
         
-        # if self.sync_mode == "Normal":
-        # 同步系統
+        # Synchronous system
         while True:
             epoch, event = self.streaming.readFixedData(0, self.winLEN+self.lag)
             time.sleep(0.04)
             if epoch is not None:
                 self.streaming.eventExist = False
                 break
-            if self.messenger.state.control_state == 'EXIT': return
-        # else:
-        #     # 伪异步系統
-        #     while True:
-        #         epoch, event = self.streaming.readFlowData(0, self.winLEN+self.lag)
-        #         if epoch is not None:
-        #             self.streaming.eventExist = False
-        #             break
-         
-
-        # 在训练阶段没有真实的反馈，可以给“空格”反馈
-        # result = 30 if self.paradigm == 'wn' else 70
+            if self.messenger.state.control_state == 'EXIT':
+                return
+            
         result = 0
 
-        # print(result)
-        # 汇报结果
+        # Report the result
         self.controller.report(result)
 
-        # 储存当前Epoch
-        self._collectTrain(epoch,event)
-        
-        
-        # # Plot the first channel of the epoch
-        # plt.plot(epoch[0])
-        # plt.title('First Channel of Epoch')
-        # plt.xlabel('Sampled Data')
-        # plt.ylabel('Amplitude')
-        
-        # # Save the plot to a file
-        # plt.savefig('first_channel_epoch.png', dpi=300)
+        # Store current epoch
+        self._collectTrain(epoch, event)
 
-        # # Close the plot to free up resources
-        # plt.close()
+        self.logger.info('Training in process, No.%s epoch done, event:%s' % (self.controller.currentEpochINX, event))
 
-        self.logger.info('Training in process, No.%s epoch done,event:%s' %
-                         (self.controller.currentEpochINX,event))
-        # 训练模型
+        # Train the model
         if self.controller.trainFlag is True:
-
             self.trainModel()
-            
-            # checkpoint = {
-            #                 'trainData_X': self.controller.trainData['X'],
-            #                 'trainData_y': self.controller.trainData['y'],
-            #                 'winLEN': self.winLEN,
-            #                 'srate': self.srate,
-            #                 'targetNUM': self.targetNUM,
-            #                 'feature_algo': self.feature_algo,
-            #                 'config_frequency': self.frequency,
-            #                 'config_phase': self.phase,
-            #                 'sync_mode': self.sync_mode,
-            #                 'p_value': self.p_value,
-            #                 'paradigm': self.paradigm,
-            #                 'n_band': self.n_band,
-            #                 'lag': self.lag,
-            #                 'savepath': self.savepath,
-            #                 'personName': self.personName
-            #             }
-            # with open('checkpoint.pkl', 'wb') as f:
-            #     pickle.dump(checkpoint, f, protocol=pickle.HIGHEST_PROTOCOL)
-            self.performance(self.controller.trainData['X'],self.controller.trainData['y'])
+            self.performance(self.controller.trainData['X'], self.controller.trainData['y'])
             self.viz()
 
         self.controller.current_process = self.controller.wait_process
         self.messenger.state.current_detect_state = 'INIT'
         return
+
     def load_checkpoint(self, checkpoint_path):
         with open(checkpoint_path, 'rb') as f:
             checkpoint = pickle.load(f)
@@ -114,29 +55,26 @@ class TrainingProcess(BasicAnalysisProcess):
         for key, value in checkpoint.items():
             setattr(self, key, value)
 
-    def _collectTrain(self,x,y):
-
+    def _collectTrain(self, x, y):
         epochINX = self.controller.currentEpochINX
 
         # X: epoch * chn * T
-        self.controller.trainData['X'].append(x[np.newaxis,:,:])
+        self.controller.trainData['X'].append(x[np.newaxis, :, :])
         self.controller.trainData['y'].append(y)
 
-        if (epochINX+1) % self.targetNUM == 0:
-
+        if (epochINX + 1) % self.targetNUM == 0:
             self.controller.currentBlockINX += 1
-            
+
             _file_name = f'{self.prefix_with_time}train.pkl'
             method_name = f'{self.feature_algo}_'
             file_name = _file_name.replace(method_name, "")
-            
-            file_path = os.path.join(self.savepath,'data',file_name)
+
+            file_path = os.path.join(self.savepath, 'data', file_name)
 
             with open(file_path, "wb+") as fp:
                 pickle.dump(self.controller.trainData, fp,
                             protocol=pickle.HIGHEST_PROTOCOL)
-                
-            
+
             # save a json file
             json_file_path = os.path.splitext(file_path)[0] + ".json"
 
@@ -153,14 +91,10 @@ class TrainingProcess(BasicAnalysisProcess):
 
             with open(json_file_path, "w") as f:
                 json.dump(data, f, indent=4)
-                
-            
-            
-            
 
         self.controller.currentEpochINX += 1
 
-        if (epochINX+1) >= self.totalTargetNUM:
+        if (epochINX + 1) >= self.totalTargetNUM:
             self.controller.trainFlag = True
 
         return
@@ -193,17 +127,16 @@ class TrainingProcess(BasicAnalysisProcess):
         total_iterations = loo.get_n_splits(X) * len(winLenArray)
         current_iteration = 0
 
-                # 在这里检查 X 的长度
+        # Check the length of X here
         if X.shape[0] == 1:
             train_index = [0]
             test_index = [0]
-            loo_splits = [(train_index, test_index)]  # 仅包含一个元组的列表
+            loo_splits = [(train_index, test_index)]  # list containing a single tuple
             tqdm_description = "Single sample"
         else:
             loo_splits = loo.split(X)
             tqdm_description = "Leave One Out"
-        # for cv, (train_index, test_index) in tqdm(enumerate(loo.split(X))):
-        # loo_splits
+
         for cv, (train_index, test_index) in tqdm(enumerate(loo_splits)):
             Xtrain, X_test = np.concatenate(X[train_index]), np.concatenate(X[test_index])
             ytrain, y_test = np.concatenate(y[train_index]), np.concatenate(y[test_index])
@@ -257,16 +190,15 @@ class TrainingProcess(BasicAnalysisProcess):
             self.progress_manager["value"] = 101
 
         frames = []
-        d = os.listdir(self.savepath+os.sep+'record')
+        d = os.listdir(self.savepath + os.sep + 'record')
         file_name = f'{self.prefix_with_time}offline.csv'
-        file_path = os.path.join(self.savepath,'record',file_name)
-        
+        file_path = os.path.join(self.savepath, 'record', file_name)
+
         df = pd.read_csv(file_path)
         frames.append(df)
-        frames = pd.concat(frames,axis=0,ignore_index=True)
-        
-        
-        # filter data for possible wrong ITRS
+        frames = pd.concat(frames, axis=0, ignore_index=True)
+
+        # filter data for possible wrong ITRs
         frames['ITR'] = frames['ITR'].apply(lambda x: 0 if x < 0 else x)
 
         # DEBUG
@@ -274,58 +206,39 @@ class TrainingProcess(BasicAnalysisProcess):
 
         sns.set_theme(style='ticks')
 
-        # 创建两行一列的子图
+        # Create subplots with two rows and one column
         fig, axes = plt.subplots(2, 1)
 
-
-        # 在第一个子图中绘制 Accuracy 随 Window Length 变化的图
+        # Plot Accuracy vs Window Length on the first subplot
         sns.lineplot(ax=axes[0], data=frames, x='Window Length', y='Accuracy', hue='paradigm')
-        axes[0].set_title(self.feature_algo+': Accuracy over Window Length')
+        axes[0].set_title(self.feature_algo + ': Accuracy over Window Length')
 
-        # 在第二个子图中绘制 ITR 随 Window Length 变化的图
+        # Plot ITR vs Window Length on the second subplot
         sns.lineplot(ax=axes[1], data=frames, x='Window Length', y='ITR', hue='paradigm')
-        axes[1].set_title(self.feature_algo+': ITR over Window Length')
+        axes[1].set_title(self.feature_algo + ': ITR over Window Length')
 
         plt.tight_layout()
 
         file_name = f'{self.prefix_with_time}offline.png'
-        file_path = os.path.join(self.savepath,'images',file_name)
+        file_path = os.path.join(self.savepath, 'images', file_name)
 
         fig.savefig(file_path, dpi=400)
-        
+
         # plt.show()
         plt.close()
 
 
     def trainModel(self):
-        # DEBUG
-        # Save variables needed for TRCA model
-        # variables = {'targetNUM': self.targetNUM,
-        #             'winLEN': self.winLEN,
-        #             'srate': self.srate,
-        #             'frequency': self.frequency,
-        #             'phase': self.phase,
-        #             'feature_algo': self.feature_algo,
-        #             'trainX': self.controller.trainData['X'],
-        #             'trainy': self.controller.trainData['y'],
-        #             'lag':self.lag}
-        # checkpoint_path = "checkpoint"
-        # with open(checkpoint_path, "wb+") as fp:
-        #     pickle.dump(variables, fp, protocol=pickle.HIGHEST_PROTOCOL)
-            
-        # # Load variables saved in pickle
-        # with open(checkpoint_path, "rb") as fp:
-        #     saved_variables = pickle.load(fp)
-            
         if self.progress_manager != None:
             self.progress_manager["text"] = f"Training {self.feature_algo} model..."
         if self.feature_algo == "TRCA":
-            model = TRCA(montage = self.targetNUM, winLEN=self.winLEN, srate=self.srate, sync_mode = self.sync_mode,p_value = self.p_value,
-                        frequency = self.frequency, phase = self.phase, n_band=5, lag = self.lag)
-        elif  self.feature_algo == "FBCCA":
-            model = fbCCA(frequency = self.frequency, winLEN=self.winLEN, srate=self.srate,conditionNUM = self.targetNUM, lag = self.lag)
+            model = TRCA(montage=self.targetNUM, winLEN=self.winLEN, srate=self.srate, sync_mode=self.sync_mode,
+                         p_value=self.p_value, frequency=self.frequency, phase=self.phase, n_band=5, lag=self.lag)
+        elif self.feature_algo == "FBCCA":
+            model = fbCCA(frequency=self.frequency, winLEN=self.winLEN, srate=self.srate,
+                          conditionNUM=self.targetNUM, lag=self.lag)
         elif self.feature_algo == "TDCA":
-            model = TDCA(winLEN=self.winLEN,srate=self.srate)
+            model = TDCA(winLEN=self.winLEN, srate=self.srate)
 
         trainX = self.controller.trainData['X']
         trainy = self.controller.trainData['y']
@@ -333,22 +246,16 @@ class TrainingProcess(BasicAnalysisProcess):
         trainX, trainy = np.squeeze(trainX), np.squeeze(trainy)
 
         model.fit(trainX, trainy)
-   
+
         self.controller.testing_process.algorithm = model
 
-        
         if self.progress_manager != None:
             self.progress_manager["text"] = f"Saving {self.feature_algo} model..."
         file_name = f'{self.prefix}Model.pkl'
-        file_path = os.path.join(self.savepath,'models',file_name)
-        # with open(os.path.join(self.savepath, f'models/{self.paradigm}{self.feature_algo}Model.pkl'), "wb+") as fp:
+        file_path = os.path.join(self.savepath, 'models', file_name)
         with open(file_path, "wb+") as fp:
-        
             pickle.dump(model, fp, protocol=pickle.HIGHEST_PROTOCOL)
-            
-        
-        
-        
+
         # save a json file
         json_file_path = os.path.splitext(file_path)[0] + ".json"
 

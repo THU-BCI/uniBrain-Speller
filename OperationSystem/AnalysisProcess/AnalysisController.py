@@ -1,10 +1,4 @@
-
-# DEBUG use
 import sys
-# Append the current directory to the system path
-sys.path.append('.')
-
-
 from OperationSystem.AnalysisProcess.TestingProcess import TestingProcess
 from OperationSystem.AnalysisProcess.WaitAnalysisProcess import WaitAnalysisProcess
 from OperationSystem.AnalysisProcess.TrainingProcess import TrainingProcess
@@ -19,39 +13,38 @@ class AnalysisController:
         self.current_process = None
         self.algorithm = None
 
-        self.currentBlockINX=0
+        self.currentBlockINX = 0
         self.currentEpochINX = 0
 
-        # 等待训练结束后会改变Flag
+        # The flag will change after waiting for the training to finish
         self.trainFlag = False
 
-    def initial(self, config, streaming,messenger,progress_manager=None):
+    def initial(self, config, streaming, messenger, progress_manager=None):
 
         self.messenger = messenger
 
-        # 个人数据
+        # Personal data
         self.trainData = dict(
-            X = [],# data
-            y = [], # label
+            X=[],  # data
+            y=[],  # label
         )
         self.testData = dict(
             X=[],  # data
             y=[],  # label
-            t = [], # time window
+            t=[],  # time window
         )
 
         self.results = []
 
-        # 测试阶段
+        # Testing phase
         self.testing_process = TestingProcess()
-        self.testing_process.initial(self, config, streaming, messenger,progress_manager)
-        
+        self.testing_process.initial(self, config, streaming, messenger, progress_manager)
 
-        # 训练阶段
+        # Training phase
         self.training_process = TrainingProcess()
-        self.training_process.initial(self, config, streaming, messenger,progress_manager)
+        self.training_process.initial(self, config, streaming, messenger, progress_manager)
 
-        # 等待下一次处理
+        # Waiting for the next process
         self.wait_process = WaitAnalysisProcess()
         self.wait_process.initial(self, config, streaming, messenger)
 
@@ -60,12 +53,11 @@ class AnalysisController:
         return self
 
     def report(self, resultID):
-        message = 'RSLT:'+str(int(resultID))
+        message = 'RSLT:' + str(int(resultID))
         self.messenger.send_exchange_message(message)
 
-
     def run(self):
-        # algorithm需要在各个状态之间传递
+        # The algorithm needs to be passed between different states
         self.current_process.run()
 
 

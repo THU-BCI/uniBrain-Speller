@@ -1,25 +1,10 @@
 import os
-
-# get current directory
-current_path  = os.getcwd()
-# relative path to add
-relative_path = "OperationSystem"
-
-# join paths to get full path
-full_path = os.path.join(current_path, relative_path)
-
-# add the path to the system paths
-import sys
-sys.path.append(full_path)
-
-from AnalysisProcess.BasicAnalysisProcess import BasicAnalysisProcess
+from OperationSystem.AnalysisProcess.BasicAnalysisProcess import BasicAnalysisProcess
 import numpy as np
 import pickle
 import pandas as pd
-import os
-# from PyQt5.QtWidgets import QMessageBox
 import time
-from AnalysisProcess.OperatorMethod.spatialFilter import fbCCA
+from OperationSystem.AnalysisProcess.OperatorMethod.spatialFilter import fbCCA
 from datetime import datetime
 
 
@@ -27,27 +12,18 @@ class TestingProcess(BasicAnalysisProcess):
     def __init__(self) -> None:
         super().__init__()
 
-
     def initial(self, controller=None, config=None, streaming=None, messenger=None,progress_manager = None):
-
         super().initial(controller, config, streaming, messenger,progress_manager)
 
-        # modelname = os.path.join(self.savepath, 'models/%sModel.pkl'%self.paradigm)
         modelname = os.path.join(self.savepath, f'models/{self.prefix}Model.pkl')
 
         if config.MODE == "TRAIN": # training mode, train new model.
             pass 
-        
         elif config.MODE =="TEST" or config.MODE =="USE" or config.MODE =="DEBUG":
-        
             if os.path.exists(modelname) or config.feature_algo == "FBCCA":
-                
                 self.loadModel(modelname, config.feature_algo)
-                
                 self.controller.trainFlag=True
-                    
             else: # model not exists
-                
                 path = os.path.join(self.savepath, 'data')
                 suffix = 'train.pkl'
                 _prefix = self.prefix
@@ -60,40 +36,36 @@ class TestingProcess(BasicAnalysisProcess):
                 # Filter the files based on the prefix and suffix
                 matching_files = [file for file in all_files if file.endswith(suffix) and file.startswith(prefix)]
 
-
                 if matching_files:
-                    
                     self.algorithm = self.reTrainModel(matching_files)
                     # with open(os.path.join(self.savepath, 'models/%sModel.pkl' % self.paradigm), "wb+") as fp:
                     with open(modelname, "wb+") as fp:
                         pickle.dump(self.algorithm, fp,protocol=pickle.HIGHEST_PROTOCOL)
                     self.controller.trainFlag = True
-                    
                 else:
-                    
                     # Create the error dialog
                     print("\n\nCaution")
                     print("No previous data and model found, will train the model first\n\n")
                     self.totalTargetNUM = 3
                     pass
-                
             
-            
-        # 用来保存模型表现：ITR,accuracy
+        # Used to save model performance: ITR, accuracy
         self.scores = []
-        # 用来保存每个trial的结果
+        # Used to save the result of each trial
         self.frames= []
 
         return
 
-    def reTrainModel(self,files):
-        # train
+
+    def reTrainModel(self, files):
+        
+        # Train
         trainX = None
         trainy = None
 
         for filename in files:
             path = os.path.join(self.savepath, 'data', filename)
-            
+
             with open(path, "rb") as fp:
                 data = pickle.load(fp)
 
@@ -103,50 +75,42 @@ class TestingProcess(BasicAnalysisProcess):
             else:
                 trainX = np.concatenate((trainX, data['X']), axis=0)
                 trainy = np.concatenate((trainy, data['y']), axis=0)
-        
-        
-        # from AnalysisProcess.OperatorMethod.spatialFilter import TDCA
-        # model = TDCA(winLEN=self.winLEN, srate=self.srate,lag=self.lag)
-        if self.feature_algo =='TRCA':
+
+        if self.feature_algo == 'TRCA':
             from AnalysisProcess.OperatorMethod.spatialFilter import TRCA
-            model = TRCA(montage = self.targetNUM, winLEN=self.winLEN, srate=self.srate, sync_mode = self.sync_mode,p_value = self.p_value,
-                        frequency = self.frequency, phase = self.phase, n_band=5)
-            
-        elif  self.feature_algo == "FBCCA":
+            model = TRCA(montage=self.targetNUM, winLEN=self.winLEN, srate=self.srate, sync_mode=self.sync_mode, p_value=self.p_value,
+                        frequency=self.frequency, phase=self.phase, n_band=5)
+        elif self.feature_algo == "FBCCA":
             from AnalysisProcess.OperatorMethod.spatialFilter import fbCCA
-            model = fbCCA(frequency = self.frequency, winLEN=self.winLEN, srate=self.srate,conditionNUM = self.targetNUM, lag = self.lag)
+            model = fbCCA(frequency=self.frequency, winLEN=self.winLEN, srate=self.srate, conditionNUM=self.targetNUM, lag=self.lag)
         elif self.feature_algo == "TDCA":
             from AnalysisProcess.OperatorMethod.spatialFilter import TDCA
-            model = TDCA(winLEN=self.winLEN,srate=self.srate)
-            
-        
+            model = TDCA(winLEN=self.winLEN, srate=self.srate)
+
         model.fit(trainX, trainy)
 
         return model
 
 
-    def loadModel(self,modelname, feature_algo = None):
-        
-        
+    def loadModel(self, modelname, feature_algo=None):
         if feature_algo != "FBCCA":
-            with open(modelname,"rb") as fp:
+            with open(modelname, "rb") as fp:
                 self.algorithm = pickle.load(fp)
         else:
-            
-            model = fbCCA(frequency = self.frequency, winLEN=self.winLEN, srate=self.srate,conditionNUM = self.targetNUM, lag = self.lag)
-            model.fit(None, model.montage+1)
+            model = fbCCA(frequency=self.frequency, winLEN=self.winLEN, srate=self.srate, conditionNUM=self.targetNUM, lag=self.lag)
+            model.fit(None, model.montage + 1)
             self.algorithm = model
-            
+
         self.algorithm.sync_mode = self.sync_mode
         self.algorithm.p_value = self.p_value
         pass
 
+
     def run(self):
 
-        # 同步系统,包含event
-        
+        # Synchronous system, including event
         if self.sync_mode == "Normal":
-            # 同步系統
+            # Synchronous system
             window_time = self.winLEN
             while True:
                 epoch, event = self.streaming.readFixedData(0, window_time+self.lag)
@@ -157,14 +121,15 @@ class TestingProcess(BasicAnalysisProcess):
                 if self.messenger.state.control_state == 'EXIT': break
             
             
-            # 计算结果
+            # Calculate result
             if self.messenger.state.control_state != 'EXIT':
                 result = self.getResult(epoch)
             else:
                 result = None
         elif self.sync_mode =="NP":
+            
             window_time = self.winLEN
-            # 伪异步系統
+            # Pseudo-asynchronous system
             while True:
                 while True:
                     epoch, event = self.streaming.readFlowData(0, window_time+self.lag)
@@ -173,7 +138,7 @@ class TestingProcess(BasicAnalysisProcess):
                         break
                     if self.messenger.state.control_state == 'EXIT': break
                 
-                # 计算结果
+                # Calculate result
                 if self.messenger.state.control_state != 'EXIT':
                     result = self.getResult(epoch)
                 else:
@@ -187,9 +152,9 @@ class TestingProcess(BasicAnalysisProcess):
                     break
             
         else:
-            # window_time = self.winLEN/4 - self.winLEN/8 
+            
             window_time = 0.35 - self.winLEN/8
-            # 伪异步系統
+            # Pseudo-asynchronous system
             while True:
                 window_time += self.winLEN/8 # multiple of winLEN
                 if window_time >= self.winLEN: 
@@ -202,7 +167,7 @@ class TestingProcess(BasicAnalysisProcess):
                         break
                     if self.messenger.state.control_state == 'EXIT': break
                 
-                # 计算结果
+                # Calculate result
                 if self.messenger.state.control_state != 'EXIT':
                     result = self.getResult(epoch)
                 else:
@@ -222,11 +187,9 @@ class TestingProcess(BasicAnalysisProcess):
             
                 
                 
-            if self.messenger.state.control_state == 'EXIT': # DO last time reporting
+            if self.messenger.state.control_state == 'EXIT': # Do last time reporting
+                
                 print('Exiting operation process...')
-                
-                
-                
                 
                 _file_name = f'{self.prefix_with_time}test.pkl'
                 method_name = f'{self.feature_algo}_'
@@ -237,34 +200,13 @@ class TestingProcess(BasicAnalysisProcess):
                     pickle.dump(self.controller.testData, fp,
                                 protocol=pickle.HIGHEST_PROTOCOL)
 
-                self.peroformance()
-                # self.performance_accross_winlen()
+                self.performance()
+                
             else:
-                # 汇报结果
+                # Report result
                 self.controller.report(result)
 
                 self.logger.success('Reported No.%s epoch,True event %s identified as %s'%(self.controller.currentEpochINX,event,result))
-                
-                # # Save checkpoint
-                # checkpoint = {
-                #     'epoch': epoch,
-                #     'event': event,
-                #     'result': result,
-                #     'window_time': window_time,
-                #     'currentEpochINX': self.controller.currentEpochINX,
-                #     'currentBlockINX': self.controller.currentBlockINX,
-                #     'testData': self.controller.testData,
-                #     'results': self.controller.results,
-                #     'prefix_with_time': self.prefix_with_time,
-                #     'feature_algo': self.feature_algo,
-                #     'savepath': self.savepath,
-                #     'frames': self.frames,
-                #     'scores': self.scores
-                # }
-
-                # checkpoint_file = f'{self.prefix_with_time}_checkpoint.pkl'
-                # with open(checkpoint_file, 'wb') as f:
-                #     pickle.dump(checkpoint, f, protocol=pickle.HIGHEST_PROTOCOL)
                 
                 self._collectTest(epoch,event,result,window_time)
 
@@ -273,7 +215,7 @@ class TestingProcess(BasicAnalysisProcess):
                 
 
         return
-
+    
     def _collectTest(self,x,y,result,window_time):
 
         epochINX = self.controller.currentEpochINX
@@ -285,15 +227,12 @@ class TestingProcess(BasicAnalysisProcess):
         self.controller.testData['y'].append(y)
         self.controller.testData['t'].append(window_time)
         
-        # 保存结果
+        # Save the results
         self.controller.results.append(result)
 
         if (epochINX+1) % cueThisBlock == 0:
 
             self.controller.currentBlockINX += 1
-            
-            
-            
             
             if self.MODE == "USE":
                 _file_name = f'{self.prefix_with_time}use.pkl'
@@ -309,12 +248,10 @@ class TestingProcess(BasicAnalysisProcess):
                             protocol=pickle.HIGHEST_PROTOCOL)
                 
             if self.MODE != 'USE':
-                self.peroformance()
-                # self.performance_accross_winlen()
+                self.performance()
             else:
                 self.controller.currentBlockINX = 0 # never ending run
                 
-            # if self.MODE == "DEBUG":
             self.controller.currentEpochINX = -1
             # return
             
@@ -328,13 +265,13 @@ class TestingProcess(BasicAnalysisProcess):
         return
 
 
-    def peroformance(self):
+    def performance(self):
 
         from sklearn.metrics import accuracy_score
         from OperationSystem.AnalysisProcess.OperatorMethod.utils import ITR
         
         
-        # 按照block为节奏记录结果
+        # Record results on a block-by-block basis
 
         blockINX  = self.controller.currentBlockINX
         y = np.concatenate(self.controller.testData['y'][-(self.controller.currentEpochINX+1):])
@@ -342,7 +279,7 @@ class TestingProcess(BasicAnalysisProcess):
         winLEN = np.array(self.controller.testData['t'][-(self.controller.currentEpochINX+1):])
         average_winLEN = np.mean(winLEN)
         
-        # 记录本block测试结果
+        # Record the results of the current block
         r = pd.DataFrame({
             'epochINX':np.arange(1,self.controller.currentEpochINX+2),
             'event':y,
@@ -353,14 +290,11 @@ class TestingProcess(BasicAnalysisProcess):
         })
         r['blockINX'] = blockINX
         r['subject'] = self.personName
-        # r['winLEN'] = self.winLEN
-        # r['winLEN'] = winLEN
         r['ISI'] = self.config.ISI
         r['paradigm'] = self.paradigm
 
 
         self.frames.append(r)
-        # self.frames = r
         df = pd.concat(self.frames, axis=0, ignore_index=True)
         
         
@@ -370,7 +304,7 @@ class TestingProcess(BasicAnalysisProcess):
         df.to_csv(file_path, mode='w', header=True)
         
         
-        # 本block结果评估
+        # Evaluate the results of the current block
         accuracy = accuracy_score(y,y_)
         itr = ITR(self.targetNUM, accuracy, average_winLEN)
 
@@ -402,13 +336,12 @@ class TestingProcess(BasicAnalysisProcess):
 
 
         return
-    
     def note_down(self):
-        # 按照block为节奏记录结果
+        # Record results based on blocks
         y_ = self.controller.results[-1]
         winLEN = np.array(self.controller.testData['t'][-1])
 
-        # 记录本block测试结果
+        # Record the results of this block
         r = pd.DataFrame({
             'epochINX': np.arange(1, self.controller.currentEpochINX + 2),
             'result': y_,
@@ -422,7 +355,6 @@ class TestingProcess(BasicAnalysisProcess):
         self.frames.append(r)
         
         df = pd.concat(self.frames, axis=0, ignore_index=True)
-
 
         file_name = f'{self.prefix_with_time}trackEpoch_use.csv'
         file_path = os.path.join(self.savepath, 'record', file_name)
