@@ -5,6 +5,6 @@
     "n_band": 5,
     "srate": 250,
     "paradigm": "ssvep",
-    "block_count": 1,
+    "block_count": 4,
     "target_count": 13
 }
