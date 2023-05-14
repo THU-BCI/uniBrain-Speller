@@ -38,8 +38,8 @@ class IdleProcess(BasicStimulationProcess):
         if not self.controller.end:
             # Wait for keyboard input to continue
             if self.MODE != "PREVIEW":  # skip the idle interface in preview mode
-                # event.waitKeys(keyList=['space'])
-                passWait = True
+                event.waitKeys(keyList=['space'])
+                # passWait = True
 
             # Update current block information
             self.update()
