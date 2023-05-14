@@ -1,0 +1,224 @@
+,epochINX,event,eventChar,result,resultChar,winLEN,blockINX,subject,ISI,paradigm
+0,1,32,⇧,10,0,1.0,1,Nigel Leong,0.5,ssvep
+1,2,22,A,22,A,1.0,1,Nigel Leong,0.5,ssvep
+2,3,43, ,40,",",1.0,1,Nigel Leong,0.5,ssvep
+3,4,33,Z,33,Z,1.0,1,Nigel Leong,0.5,ssvep
+4,5,14,E,14,E,1.0,1,Nigel Leong,0.5,ssvep
+5,6,37,B,19,I,1.0,1,Nigel Leong,0.5,ssvep
+6,7,15,R,15,R,1.0,1,Nigel Leong,0.5,ssvep
+7,8,22,A,22,A,1.0,1,Nigel Leong,0.5,ssvep
+8,9,40,",",41,.,1.0,1,Nigel Leong,0.5,ssvep
+9,10,43, ,16,T,1.0,1,Nigel Leong,0.5,ssvep
+10,11,2,2,2,2,1.0,1,Nigel Leong,0.5,ssvep
+11,12,43, ,6,6,1.0,1,Nigel Leong,0.5,ssvep
+12,13,39,M,10,0,1.0,1,Nigel Leong,0.5,ssvep
+13,14,19,I,9,9,1.0,1,Nigel Leong,0.5,ssvep
+14,15,35,C,33,Z,1.0,1,Nigel Leong,0.5,ssvep
+15,16,14,E,14,E,1.0,1,Nigel Leong,0.5,ssvep
+16,17,40,",",9,9,1.0,1,Nigel Leong,0.5,ssvep
+17,18,43, ,13,W,1.0,1,Nigel Leong,0.5,ssvep
+18,19,5,5,5,5,1.0,1,Nigel Leong,0.5,ssvep
+19,20,43, ,3,3,1.0,1,Nigel Leong,0.5,ssvep
+20,21,24,D,24,D,1.0,1,Nigel Leong,0.5,ssvep
+21,22,20,O,20,O,1.0,1,Nigel Leong,0.5,ssvep
+22,23,26,G,26,G,1.0,1,Nigel Leong,0.5,ssvep
+23,24,23,S,23,S,1.0,1,Nigel Leong,0.5,ssvep
+24,25,43, ,17,Y,1.0,1,Nigel Leong,0.5,ssvep
+25,26,28,J,32,⇧,1.0,1,Nigel Leong,0.5,ssvep
+26,27,18,U,18,U,1.0,1,Nigel Leong,0.5,ssvep
+27,28,39,M,39,M,1.0,1,Nigel Leong,0.5,ssvep
+28,29,21,P,37,B,1.0,1,Nigel Leong,0.5,ssvep
+29,30,14,E,14,E,1.0,1,Nigel Leong,0.5,ssvep
+30,31,24,D,24,D,1.0,1,Nigel Leong,0.5,ssvep
+31,32,41,.,41,.,1.0,1,Nigel Leong,0.5,ssvep
+32,33,31,↵,2,2,1.0,1,Nigel Leong,0.5,ssvep
+33,1,3,3,3,3,1.0,2,Nigel Leong,0.5,ssvep
+34,2,43, ,17,Y,1.0,2,Nigel Leong,0.5,ssvep
+35,3,29,K,29,K,1.0,2,Nigel Leong,0.5,ssvep
+36,4,19,I,19,I,1.0,2,Nigel Leong,0.5,ssvep
+37,5,38,N,40,",",1.0,2,Nigel Leong,0.5,ssvep
+38,6,24,D,24,D,1.0,2,Nigel Leong,0.5,ssvep
+39,7,43, ,8,8,1.0,2,Nigel Leong,0.5,ssvep
+40,8,35,C,41,.,1.0,2,Nigel Leong,0.5,ssvep
+41,9,22,A,22,A,1.0,2,Nigel Leong,0.5,ssvep
+42,10,16,T,16,T,1.0,2,Nigel Leong,0.5,ssvep
+43,11,23,S,23,S,1.0,2,Nigel Leong,0.5,ssvep
+44,12,40,",",37,B,1.0,2,Nigel Leong,0.5,ssvep
+45,13,43, ,21,P,1.0,2,Nigel Leong,0.5,ssvep
+46,14,6,6,6,6,1.0,2,Nigel Leong,0.5,ssvep
+47,15,43, ,19,I,1.0,2,Nigel Leong,0.5,ssvep
+48,16,25,F,25,F,1.0,2,Nigel Leong,0.5,ssvep
+49,17,15,R,15,R,1.0,2,Nigel Leong,0.5,ssvep
+50,18,20,O,5,5,1.0,2,Nigel Leong,0.5,ssvep
+51,19,26,G,41,.,1.0,2,Nigel Leong,0.5,ssvep
+52,20,23,S,23,S,1.0,2,Nigel Leong,0.5,ssvep
+53,21,40,",",12,Q,1.0,2,Nigel Leong,0.5,ssvep
+54,22,43, ,24,D,1.0,2,Nigel Leong,0.5,ssvep
+55,23,9,9,9,9,1.0,2,Nigel Leong,0.5,ssvep
+56,24,43, ,17,Y,1.0,2,Nigel Leong,0.5,ssvep
+57,25,25,F,39,M,1.0,2,Nigel Leong,0.5,ssvep
+58,26,19,I,6,6,1.0,2,Nigel Leong,0.5,ssvep
+59,27,23,S,23,S,1.0,2,Nigel Leong,0.5,ssvep
+60,28,27,H,27,H,1.0,2,Nigel Leong,0.5,ssvep
+61,29,43, ,43, ,1.0,2,Nigel Leong,0.5,ssvep
+62,30,23,S,23,S,1.0,2,Nigel Leong,0.5,ssvep
+63,31,13,W,13,W,1.0,2,Nigel Leong,0.5,ssvep
+64,32,19,I,19,I,1.0,2,Nigel Leong,0.5,ssvep
+65,33,39,M,21,P,1.0,2,Nigel Leong,0.5,ssvep
+66,34,41,.,39,M,1.0,2,Nigel Leong,0.5,ssvep
+67,35,31,↵,42,/,1.0,2,Nigel Leong,0.5,ssvep
+68,1,32,⇧,24,D,1.0,3,Nigel Leong,0.5,ssvep
+69,2,12,Q,12,Q,1.0,3,Nigel Leong,0.5,ssvep
+70,3,18,U,18,U,1.0,3,Nigel Leong,0.5,ssvep
+71,4,19,I,28,J,1.0,3,Nigel Leong,0.5,ssvep
+72,5,14,E,14,E,1.0,3,Nigel Leong,0.5,ssvep
+73,6,16,T,16,T,1.0,3,Nigel Leong,0.5,ssvep
+74,7,30,L,15,R,1.0,3,Nigel Leong,0.5,ssvep
+75,8,17,Y,17,Y,1.0,3,Nigel Leong,0.5,ssvep
+76,9,40,",",9,9,1.0,3,Nigel Leong,0.5,ssvep
+77,10,43, ,17,Y,1.0,3,Nigel Leong,0.5,ssvep
+78,11,8,8,8,8,1.0,3,Nigel Leong,0.5,ssvep
+79,12,43, ,12,Q,1.0,3,Nigel Leong,0.5,ssvep
+80,13,14,E,14,E,1.0,3,Nigel Leong,0.5,ssvep
+81,14,30,L,30,L,1.0,3,Nigel Leong,0.5,ssvep
+82,15,14,E,14,E,1.0,3,Nigel Leong,0.5,ssvep
+83,16,21,P,21,P,1.0,3,Nigel Leong,0.5,ssvep
+84,17,27,H,27,H,1.0,3,Nigel Leong,0.5,ssvep
+85,18,22,A,22,A,1.0,3,Nigel Leong,0.5,ssvep
+86,19,38,N,38,N,1.0,3,Nigel Leong,0.5,ssvep
+87,20,16,T,16,T,1.0,3,Nigel Leong,0.5,ssvep
+88,21,23,S,23,S,1.0,3,Nigel Leong,0.5,ssvep
+89,22,43, ,41,.,1.0,3,Nigel Leong,0.5,ssvep
+90,23,13,W,13,W,1.0,3,Nigel Leong,0.5,ssvep
+91,24,22,A,22,A,1.0,3,Nigel Leong,0.5,ssvep
+92,25,30,L,30,L,1.0,3,Nigel Leong,0.5,ssvep
+93,26,29,K,29,K,1.0,3,Nigel Leong,0.5,ssvep
+94,27,43, ,17,Y,1.0,3,Nigel Leong,0.5,ssvep
+95,28,37,B,37,B,1.0,3,Nigel Leong,0.5,ssvep
+96,29,17,Y,17,Y,1.0,3,Nigel Leong,0.5,ssvep
+97,30,43, ,41,.,1.0,3,Nigel Leong,0.5,ssvep
+98,31,4,4,4,4,1.0,3,Nigel Leong,0.5,ssvep
+99,32,43, ,15,R,1.0,3,Nigel Leong,0.5,ssvep
+100,33,16,T,16,T,1.0,3,Nigel Leong,0.5,ssvep
+101,34,15,R,15,R,1.0,3,Nigel Leong,0.5,ssvep
+102,35,14,E,5,5,1.0,3,Nigel Leong,0.5,ssvep
+103,36,14,E,14,E,1.0,3,Nigel Leong,0.5,ssvep
+104,37,23,S,23,S,1.0,3,Nigel Leong,0.5,ssvep
+105,38,41,.,41,.,1.0,3,Nigel Leong,0.5,ssvep
+106,39,31,↵,1,1,1.0,3,Nigel Leong,0.5,ssvep
+107,1,32,⇧,11,←,1.0,4,Nigel Leong,0.5,ssvep
+108,2,36,V,5,5,1.0,4,Nigel Leong,0.5,ssvep
+109,3,14,E,14,E,1.0,4,Nigel Leong,0.5,ssvep
+110,4,34,X,34,X,1.0,4,Nigel Leong,0.5,ssvep
+111,5,19,I,40,",",1.0,4,Nigel Leong,0.5,ssvep
+112,6,38,N,36,V,1.0,4,Nigel Leong,0.5,ssvep
+113,7,26,G,26,G,1.0,4,Nigel Leong,0.5,ssvep
+114,8,43, ,7,7,1.0,4,Nigel Leong,0.5,ssvep
+115,9,37,B,6,6,1.0,4,Nigel Leong,0.5,ssvep
+116,10,18,U,6,6,1.0,4,Nigel Leong,0.5,ssvep
+117,11,26,G,26,G,1.0,4,Nigel Leong,0.5,ssvep
+118,12,23,S,23,S,1.0,4,Nigel Leong,0.5,ssvep
+119,13,43, ,10,0,1.0,4,Nigel Leong,0.5,ssvep
+120,14,20,O,20,O,1.0,4,Nigel Leong,0.5,ssvep
+121,15,38,N,38,N,1.0,4,Nigel Leong,0.5,ssvep
+122,16,43, ,41,.,1.0,4,Nigel Leong,0.5,ssvep
+123,17,1,1,1,1,1.0,4,Nigel Leong,0.5,ssvep
+124,18,43, ,12,Q,1.0,4,Nigel Leong,0.5,ssvep
+125,19,30,L,18,U,1.0,4,Nigel Leong,0.5,ssvep
+126,20,14,E,14,E,1.0,4,Nigel Leong,0.5,ssvep
+127,21,22,A,22,A,1.0,4,Nigel Leong,0.5,ssvep
+128,22,25,F,25,F,1.0,4,Nigel Leong,0.5,ssvep
+129,23,40,",",38,N,1.0,4,Nigel Leong,0.5,ssvep
+130,24,43, ,5,5,1.0,4,Nigel Leong,0.5,ssvep
+131,25,10,0,10,0,1.0,4,Nigel Leong,0.5,ssvep
+132,26,43, ,43, ,1.0,4,Nigel Leong,0.5,ssvep
+133,27,27,H,40,",",1.0,4,Nigel Leong,0.5,ssvep
+134,28,22,A,22,A,1.0,4,Nigel Leong,0.5,ssvep
+135,29,15,R,15,R,1.0,4,Nigel Leong,0.5,ssvep
+136,30,39,M,39,M,1.0,4,Nigel Leong,0.5,ssvep
+137,31,43, ,24,D,1.0,4,Nigel Leong,0.5,ssvep
+138,32,24,D,24,D,1.0,4,Nigel Leong,0.5,ssvep
+139,33,20,O,20,O,1.0,4,Nigel Leong,0.5,ssvep
+140,34,38,N,22,A,1.0,4,Nigel Leong,0.5,ssvep
+141,35,14,E,14,E,1.0,4,Nigel Leong,0.5,ssvep
+142,36,41,.,41,.,1.0,4,Nigel Leong,0.5,ssvep
+143,37,31,↵,40,",",1.0,4,Nigel Leong,0.5,ssvep
+144,1,7,7,7,7,1.0,5,Nigel Leong,0.5,ssvep
+145,2,43, ,41,.,1.0,5,Nigel Leong,0.5,ssvep
+146,3,27,H,27,H,1.0,5,Nigel Leong,0.5,ssvep
+147,4,14,E,14,E,1.0,5,Nigel Leong,0.5,ssvep
+148,5,38,N,19,I,1.0,5,Nigel Leong,0.5,ssvep
+149,6,23,S,23,S,1.0,5,Nigel Leong,0.5,ssvep
+150,7,43, ,43, ,1.0,5,Nigel Leong,0.5,ssvep
+151,8,30,L,28,J,1.0,5,Nigel Leong,0.5,ssvep
+152,9,22,A,22,A,1.0,5,Nigel Leong,0.5,ssvep
+153,10,17,Y,17,Y,1.0,5,Nigel Leong,0.5,ssvep
+154,11,43, ,41,.,1.0,5,Nigel Leong,0.5,ssvep
+155,12,26,G,26,G,1.0,5,Nigel Leong,0.5,ssvep
+156,13,20,O,29,K,1.0,5,Nigel Leong,0.5,ssvep
+157,14,30,L,30,L,1.0,5,Nigel Leong,0.5,ssvep
+158,15,24,D,24,D,1.0,5,Nigel Leong,0.5,ssvep
+159,16,14,E,14,E,1.0,5,Nigel Leong,0.5,ssvep
+160,17,38,N,6,6,1.0,5,Nigel Leong,0.5,ssvep
+161,18,43, ,6,6,1.0,5,Nigel Leong,0.5,ssvep
+162,19,14,E,14,E,1.0,5,Nigel Leong,0.5,ssvep
+163,20,26,G,26,G,1.0,5,Nigel Leong,0.5,ssvep
+164,21,26,G,26,G,1.0,5,Nigel Leong,0.5,ssvep
+165,22,23,S,23,S,1.0,5,Nigel Leong,0.5,ssvep
+166,23,40,",",35,C,1.0,5,Nigel Leong,0.5,ssvep
+167,24,43, ,18,U,1.0,5,Nigel Leong,0.5,ssvep
+168,25,34,X,16,T,1.0,5,Nigel Leong,0.5,ssvep
+169,26,43, ,19,I,1.0,5,Nigel Leong,0.5,ssvep
+170,27,39,M,39,M,1.0,5,Nigel Leong,0.5,ssvep
+171,28,22,A,22,A,1.0,5,Nigel Leong,0.5,ssvep
+172,29,15,R,15,R,1.0,5,Nigel Leong,0.5,ssvep
+173,30,29,K,36,V,1.0,5,Nigel Leong,0.5,ssvep
+174,31,23,S,23,S,1.0,5,Nigel Leong,0.5,ssvep
+175,32,43, ,14,E,1.0,5,Nigel Leong,0.5,ssvep
+176,33,23,S,23,S,1.0,5,Nigel Leong,0.5,ssvep
+177,34,21,P,21,P,1.0,5,Nigel Leong,0.5,ssvep
+178,35,20,O,20,O,1.0,5,Nigel Leong,0.5,ssvep
+179,36,16,T,16,T,1.0,5,Nigel Leong,0.5,ssvep
+180,37,41,.,41,.,1.0,5,Nigel Leong,0.5,ssvep
+181,38,31,↵,31,↵,1.0,5,Nigel Leong,0.5,ssvep
+182,1,32,⇧,32,⇧,1.0,6,Nigel Leong,0.5,ssvep
+183,2,13,W,13,W,1.0,6,Nigel Leong,0.5,ssvep
+184,3,27,H,27,H,1.0,6,Nigel Leong,0.5,ssvep
+185,4,17,Y,17,Y,1.0,6,Nigel Leong,0.5,ssvep
+186,5,43, ,6,6,1.0,6,Nigel Leong,0.5,ssvep
+187,6,24,D,24,D,1.0,6,Nigel Leong,0.5,ssvep
+188,7,19,I,19,I,1.0,6,Nigel Leong,0.5,ssvep
+189,8,24,D,24,D,1.0,6,Nigel Leong,0.5,ssvep
+190,9,43, ,18,U,1.0,6,Nigel Leong,0.5,ssvep
+191,10,18,U,18,U,1.0,6,Nigel Leong,0.5,ssvep
+192,11,21,P,21,P,1.0,6,Nigel Leong,0.5,ssvep
+193,12,16,T,16,T,1.0,6,Nigel Leong,0.5,ssvep
+194,13,20,O,15,R,1.0,6,Nigel Leong,0.5,ssvep
+195,14,38,N,42,/,1.0,6,Nigel Leong,0.5,ssvep
+196,15,40,",",40,",",1.0,6,Nigel Leong,0.5,ssvep
+197,16,43, ,9,9,1.0,6,Nigel Leong,0.5,ssvep
+198,17,16,T,16,T,1.0,6,Nigel Leong,0.5,ssvep
+199,18,27,H,16,T,1.0,6,Nigel Leong,0.5,ssvep
+200,19,14,E,14,E,1.0,6,Nigel Leong,0.5,ssvep
+201,20,43, ,6,6,1.0,6,Nigel Leong,0.5,ssvep
+202,21,1,1,1,1,1.0,6,Nigel Leong,0.5,ssvep
+203,22,23,S,23,S,1.0,6,Nigel Leong,0.5,ssvep
+204,23,16,T,6,6,1.0,6,Nigel Leong,0.5,ssvep
+205,24,40,",",38,N,1.0,6,Nigel Leong,0.5,ssvep
+206,25,43, ,17,Y,1.0,6,Nigel Leong,0.5,ssvep
+207,26,37,B,34,X,1.0,6,Nigel Leong,0.5,ssvep
+208,27,18,U,26,G,1.0,6,Nigel Leong,0.5,ssvep
+209,28,17,Y,17,Y,1.0,6,Nigel Leong,0.5,ssvep
+210,29,43, ,43, ,1.0,6,Nigel Leong,0.5,ssvep
+211,30,9,9,9,9,1.0,6,Nigel Leong,0.5,ssvep
+212,31,11,←,11,←,1.0,6,Nigel Leong,0.5,ssvep
+213,32,8,8,8,8,1.0,6,Nigel Leong,0.5,ssvep
+214,33,43, ,2,2,1.0,6,Nigel Leong,0.5,ssvep
+215,34,21,P,9,9,1.0,6,Nigel Leong,0.5,ssvep
+216,35,30,L,25,F,1.0,6,Nigel Leong,0.5,ssvep
+217,36,18,U,18,U,1.0,6,Nigel Leong,0.5,ssvep
+218,37,39,M,39,M,1.0,6,Nigel Leong,0.5,ssvep
+219,38,23,S,23,S,1.0,6,Nigel Leong,0.5,ssvep
+220,39,32,⇧,32,⇧,1.0,6,Nigel Leong,0.5,ssvep
+221,40,42,/,37,B,1.0,6,Nigel Leong,0.5,ssvep
+222,41,31,↵,31,↵,1.0,6,Nigel Leong,0.5,ssvep

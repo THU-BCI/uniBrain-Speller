@@ -1,0 +1,34 @@
+,epochINX,event,eventChar,result,resultChar,winLEN,blockINX,subject,ISI,paradigm
+0,1,32,⇧,32,⇧,1.0,1,Toto,0.5,ssvep
+1,2,22,A,22,A,1.0,1,Toto,0.5,ssvep
+2,3,43, ,43, ,1.0,1,Toto,0.5,ssvep
+3,4,33,Z,41,.,1.0,1,Toto,0.5,ssvep
+4,5,14,E,14,E,1.0,1,Toto,0.5,ssvep
+5,6,37,B,31,↵,1.0,1,Toto,0.5,ssvep
+6,7,15,R,15,R,1.0,1,Toto,0.5,ssvep
+7,8,22,A,22,A,1.0,1,Toto,0.5,ssvep
+8,9,40,",",40,",",1.0,1,Toto,0.5,ssvep
+9,10,43, ,22,A,1.0,1,Toto,0.5,ssvep
+10,11,2,2,2,2,1.0,1,Toto,0.5,ssvep
+11,12,43, ,17,Y,1.0,1,Toto,0.5,ssvep
+12,13,39,M,39,M,1.0,1,Toto,0.5,ssvep
+13,14,19,I,19,I,1.0,1,Toto,0.5,ssvep
+14,15,35,C,35,C,1.0,1,Toto,0.5,ssvep
+15,16,14,E,14,E,1.0,1,Toto,0.5,ssvep
+16,17,40,",",40,",",1.0,1,Toto,0.5,ssvep
+17,18,43, ,43, ,1.0,1,Toto,0.5,ssvep
+18,19,5,5,5,5,1.0,1,Toto,0.5,ssvep
+19,20,43, ,28,J,1.0,1,Toto,0.5,ssvep
+20,21,24,D,24,D,1.0,1,Toto,0.5,ssvep
+21,22,20,O,20,O,1.0,1,Toto,0.5,ssvep
+22,23,26,G,26,G,1.0,1,Toto,0.5,ssvep
+23,24,23,S,23,S,1.0,1,Toto,0.5,ssvep
+24,25,43, ,43, ,1.0,1,Toto,0.5,ssvep
+25,26,28,J,28,J,1.0,1,Toto,0.5,ssvep
+26,27,18,U,37,B,1.0,1,Toto,0.5,ssvep
+27,28,39,M,39,M,1.0,1,Toto,0.5,ssvep
+28,29,21,P,21,P,1.0,1,Toto,0.5,ssvep
+29,30,14,E,14,E,1.0,1,Toto,0.5,ssvep
+30,31,24,D,24,D,1.0,1,Toto,0.5,ssvep
+31,32,41,.,41,.,1.0,1,Toto,0.5,ssvep
+32,33,31,↵,31,↵,1.0,1,Toto,0.5,ssvep

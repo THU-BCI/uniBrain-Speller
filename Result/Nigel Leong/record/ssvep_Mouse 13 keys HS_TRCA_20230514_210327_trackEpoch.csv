@@ -1,0 +1,14 @@
+,epochINX,event,eventChar,result,resultChar,winLEN,blockINX,subject,ISI,paradigm
+0,1,1,↖︎,1,↖︎,1.0,1,Nigel Leong,0.5,ssvep
+1,2,2,←,2,←,1.0,1,Nigel Leong,0.5,ssvep
+2,3,3,↙︎,3,↙︎,1.0,1,Nigel Leong,0.5,ssvep
+3,4,4,↑,4,↑,1.0,1,Nigel Leong,0.5,ssvep
+4,5,5,L,5,L,1.0,1,Nigel Leong,0.5,ssvep
+5,6,6,↓,6,↓,1.0,1,Nigel Leong,0.5,ssvep
+6,7,7,↗︎,7,↗︎,1.0,1,Nigel Leong,0.5,ssvep
+7,8,8,→,8,→,1.0,1,Nigel Leong,0.5,ssvep
+8,9,9,↘︎,9,↘︎,1.0,1,Nigel Leong,0.5,ssvep
+9,10,10,Drag,10,Drag,1.0,1,Nigel Leong,0.5,ssvep
+10,11,11,R,11,R,1.0,1,Nigel Leong,0.5,ssvep
+11,12,12,+,12,+,1.0,1,Nigel Leong,0.5,ssvep
+12,13,13,-,13,-,1.0,1,Nigel Leong,0.5,ssvep
