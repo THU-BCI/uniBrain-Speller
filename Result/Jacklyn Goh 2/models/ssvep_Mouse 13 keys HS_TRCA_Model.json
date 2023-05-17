@@ -1,0 +1,10 @@
+{
+    "person_name": "Jacklyn Goh 2",
+    "lag": 0.14,
+    "feature_algo": "TRCA",
+    "n_band": 5,
+    "srate": 250,
+    "paradigm": "ssvep",
+    "block_count": 5,
+    "target_count": 13
+}
