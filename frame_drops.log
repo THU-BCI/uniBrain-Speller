@@ -72,34 +72,25 @@ Subject: Nigel Leong 3, Timestamp: 2023-05-17 21:43:59, No of Frames: 1,Dropped 
 Subject: Nigel Leong 3, Timestamp: 2023-05-17 21:59:57, No of Frames: 1,Dropped Frames: [44], Block: 2, Index: 95, Cue ID: 36
 Subject: Nigel Leong 3, Timestamp: 2023-05-17 22:00:03, No of Frames: 1,Dropped Frames: [46], Block: 2, Index: 97, Cue ID: 42
 Subject: Nigel Leong 3, Timestamp: 2023-05-17 22:00:11, No of Frames: 1,Dropped Frames: [45], Block: 2, Index: 100, Cue ID: 15
-Subject: Kent, Timestamp: 2023-05-22 21:25:44, No of Frames: 26,Dropped Frames: [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69], Block: 0, Index: 0, Cue ID: 0
-Subject: Kent, Timestamp: 2023-05-25 12:58:56, No of Frames: 26,Dropped Frames: [0, 3, 7, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 0, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:00, No of Frames: 18,Dropped Frames: [3, 7, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 1, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:03, No of Frames: 18,Dropped Frames: [3, 7, 11, 15, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 2, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:07, No of Frames: 18,Dropped Frames: [2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 3, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:10, No of Frames: 18,Dropped Frames: [3, 6, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 68], Block: 0, Index: 4, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:13, No of Frames: 18,Dropped Frames: [2, 5, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 5, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:17, No of Frames: 18,Dropped Frames: [2, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69], Block: 0, Index: 6, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:21, No of Frames: 19,Dropped Frames: [0, 3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71], Block: 0, Index: 7, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:24, No of Frames: 18,Dropped Frames: [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69], Block: 0, Index: 8, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:28, No of Frames: 19,Dropped Frames: [1, 5, 9, 12, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 66, 70], Block: 0, Index: 9, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:31, No of Frames: 18,Dropped Frames: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 10, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:34, No of Frames: 19,Dropped Frames: [0, 3, 7, 11, 15, 18, 22, 26, 30, 34, 38, 41, 45, 49, 53, 57, 61, 65, 69], Block: 0, Index: 11, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:38, No of Frames: 19,Dropped Frames: [1, 4, 7, 11, 15, 19, 23, 27, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 12, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:41, No of Frames: 18,Dropped Frames: [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69], Block: 0, Index: 13, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:44, No of Frames: 18,Dropped Frames: [3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71], Block: 0, Index: 14, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:48, No of Frames: 18,Dropped Frames: [2, 6, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69], Block: 0, Index: 15, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:51, No of Frames: 18,Dropped Frames: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 16, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:55, No of Frames: 18,Dropped Frames: [1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 60, 64, 68], Block: 0, Index: 17, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 12:59:59, No of Frames: 18,Dropped Frames: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 18, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:02, No of Frames: 18,Dropped Frames: [3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71], Block: 0, Index: 19, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:06, No of Frames: 19,Dropped Frames: [0, 3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 62, 65, 68], Block: 0, Index: 20, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:09, No of Frames: 19,Dropped Frames: [2, 6, 10, 14, 18, 21, 24, 27, 31, 35, 39, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 21, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:12, No of Frames: 19,Dropped Frames: [0, 3, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70], Block: 0, Index: 22, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:16, No of Frames: 18,Dropped Frames: [1, 5, 9, 13, 17, 21, 25, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 23, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:20, No of Frames: 18,Dropped Frames: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 24, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:23, No of Frames: 19,Dropped Frames: [1, 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 25, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:26, No of Frames: 18,Dropped Frames: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68], Block: 0, Index: 26, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:29, No of Frames: 18,Dropped Frames: [3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71], Block: 0, Index: 27, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:32, No of Frames: 19,Dropped Frames: [0, 4, 8, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71], Block: 0, Index: 28, Cue ID: -1
-Subject: Kent, Timestamp: 2023-05-25 13:00:36, No of Frames: 19,Dropped Frames: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 51, 54, 58, 61, 65, 69], Block: 0, Index: 29, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:01:57, No of Frames: 1,Dropped Frames: [138], Block: 0, Index: 1, Cue ID: 1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:05:48, No of Frames: 1,Dropped Frames: [28], Block: 2, Index: 29, Cue ID: 3
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:10:59, No of Frames: 1,Dropped Frames: [66], Block: 0, Index: 10, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:15:49, No of Frames: 1,Dropped Frames: [143], Block: 0, Index: 101, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:19:39, No of Frames: 1,Dropped Frames: [35], Block: 0, Index: 11, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:21:01, No of Frames: 1,Dropped Frames: [2], Block: 0, Index: 38, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:25:43, No of Frames: 1,Dropped Frames: [2], Block: 0, Index: 71, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:46:27, No of Frames: 1,Dropped Frames: [15], Block: 0, Index: 125, Cue ID: -1
+Subject: Jacklyn 3, Timestamp: 2023-05-27 10:52:32, No of Frames: 1,Dropped Frames: [445], Block: 0, Index: 0, Cue ID: 0
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:04:59, No of Frames: 1,Dropped Frames: [49], Block: 4, Index: 182, Cue ID: 10
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:19:17, No of Frames: 1,Dropped Frames: [39], Block: 0, Index: 8, Cue ID: 39
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:21:42, No of Frames: 1,Dropped Frames: [45], Block: 0, Index: 25, Cue ID: 27
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:21:51, No of Frames: 1,Dropped Frames: [61], Block: 0, Index: 28, Cue ID: 20
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:25:29, No of Frames: 1,Dropped Frames: [27], Block: 2, Index: 91, Cue ID: 21
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:26:07, No of Frames: 1,Dropped Frames: [27], Block: 2, Index: 103, Cue ID: 13
+Subject: Jacklyn 3, Timestamp: 2023-05-27 11:26:16, No of Frames: 1,Dropped Frames: [26], Block: 2, Index: 106, Cue ID: 30
+Subject: test, Timestamp: 2023-06-28 17:49:47, No of Frames: 2,Dropped Frames: [41, 52], Block: 0, Index: 1, Cue ID: -1
+Subject: test, Timestamp: 2023-06-28 17:50:38, No of Frames: 1,Dropped Frames: [58], Block: 0, Index: 1, Cue ID: -1
+Subject: test, Timestamp: 2023-06-28 17:52:17, No of Frames: 1,Dropped Frames: [30], Block: 0, Index: 32, Cue ID: -1
+Subject: test, Timestamp: 2023-06-28 17:54:06, No of Frames: 1,Dropped Frames: [54], Block: 0, Index: 66, Cue ID: -1
+Subject: test, Timestamp: 2023-06-28 17:55:35, No of Frames: 1,Dropped Frames: [32], Block: 0, Index: 94, Cue ID: -1
+Subject: test, Timestamp: 2023-06-28 18:05:36, No of Frames: 1,Dropped Frames: [12], Block: 0, Index: 282, Cue ID: -1
