@@ -45,6 +45,10 @@ Utilizing the Steady-State Visual Evoked Potential (SSVEP) paradigm, our softwar
 
 After completing these steps, you should have all the necessary dependencies installed and be ready to use the software.
 
+### User Manual
+
+To obtain the user manual, please send an email to kenttkh92@gmail.com. In your message, kindly provide details about your background and the purpose of your request to ensure we can assist you effectively.
+
 ## Usage
 
 ### 1. User Information Input
@@ -81,8 +85,6 @@ Ensure you have two systems set up:
 - If you opt for the TRCA training algorithm, you'll need to undergo at least three blocks of training before accessing the Test and Use features.
 - If you're using an untrained algorithm, you can directly proceed to use the software.
 
-希望这样可以满足您的需求！
-
 ## Contributing
 
 We welcome contributions from the community! If you're interested in enhancing the functionalities or have suggestions, feel free to make a pull request or open an issue.
@@ -95,8 +97,16 @@ We appreciate the hard work and dedication of our main developers and the entire
 
 ## License
 
-Include any relevant licensing information for your project, and provide a link to the full license text if needed.
+This software is protected under the **Mozilla Public License Version 2.0**. The intellectual property belongs to the Brain-Computer Interface Team of Tsinghua University, led by Professor Gao Xiaorong. While the software is open-source and we welcome its use by the community, any commercial applications or endeavors should first seek permission from our team. For commercial inquiries, please contact us directly.
 
 ## Acknowledgments
 
-List any individuals, organizations, or resources that have contributed to your project or have inspired its creation.
+I would like to express my profound gratitude to several distinguished individuals in the field of brain-computer interfaces:
+
+- First and foremost, I owe a deep debt of gratitude to Professor **Gao Xiaorong** and his team. Their long-standing research in the domain has been a significant reference and foundation for this work.
+
+- Special acknowledgment goes to Lecturer **Yang Chen** and her dedicated team from Beijing University of Posts and Telecommunications. Our system's development drew inspiration from their groundbreaking systems.
+
+- I would also like to extend my appreciation to Ph.D. student **Shi Nanlin**. His expertise in crafting a streamlined Python coding structure was instrumental in setting up the entire system framework.
+
+Their invaluable contributions to the field of brain-computer interfaces have not only enriched the domain but also paved the way for future innovations.
