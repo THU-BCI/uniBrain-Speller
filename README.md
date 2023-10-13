@@ -43,15 +43,22 @@ After completing these steps, you should have all the necessary dependencies ins
 ### 1. User Information Input
 Start by entering the basic user information to tailor the experience to the individual user.
 
+当然可以，我为您调整了图片的大小，使其涵盖半个总宽度：
+
 ### 2. Keyboard Selection and Customization
 - Choose your desired keyboard. Each keyboard has specific functionalities.
 - The default settings allow for mouse control and typing.
-![User Interface](pictures/IMG_3326.jpg)
-![Mouse Control Experiment](pictures/mouse-control-experiment.png)
+  
+  <img src="pictures/IMG_3326.jpg" width="50%">
+  <img src="pictures/mouse-control-experiment.png" width="50%">
+
 - You can freely edit the position, output functions, and flicker parameters based on your preferences.
-![Keyboard Page](pictures/ui-page-keys-b.png)
+
+  <img src="pictures/ui-page-keys-b.png" width="50%">
+
 - For those who wish to add more functionalities, you can also add preset keyboards.
 - To ensure stable flickering, it's recommended to choose the half-screen option.
+
   
 **Illustrations**:
 ### 3. Dual-Host Synchronization
