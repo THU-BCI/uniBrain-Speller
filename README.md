@@ -70,8 +70,6 @@ Start by entering the basic user information to tailor the experience to the ind
 - For those who wish to add more functionalities, you can also add preset keyboards.
 - To ensure stable flickering, it's recommended to choose the half-screen option.
 
-  
-**Illustrations**:
 ### 3. Dual-Host Synchronization
 Ensure you have two systems set up:
 - One system runs our software.
