@@ -6,7 +6,9 @@
 
 Brain-computer interfaces (BCIs) are at the forefront of human-computer interaction, yet many lack user-centric software. We've developed a unified BCI software platform addressing this gap, streamlining everything from data acquisition to command output. 
 
-![uniBrain Speller Logo](pictures/uni-brain-speller-logo.png)
+<p align="center">
+  <img src="pictures/uni-brain-speller-logo.png" width="25%">
+</p>
 
 Utilizing the Steady-State Visual Evoked Potential (SSVEP) paradigm, our software achieves a Fitts’ transmission rate of 0.275 bps initially. Further, the Task-Related Component Analysis (TRCA) on our spelling keyboard hits a peak performance of 169.30±13.89 bpm within 0.3 seconds. Our research also highlights BCI's positive impact on perceptual psychology, with key metrics like usage window length correlating with enhanced user agency and body perception. The platform offers tailored BCI interactions, adaptable to diverse needs, from medical applications to entertainment. Embracing open-source principles, our software garners acclaim from the academic and medical communities.
 
