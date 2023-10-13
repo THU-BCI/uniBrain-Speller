@@ -2,13 +2,15 @@
 
 ## Introduction
 
-UniBrain Speller is a user-friendly brain-computer interface software, emphasizing unification, universality, and uniqueness. Developed by Tsinghua University's Brain-Computer Interface Lab, it streamlines the SSVEP process, covering data acquisition, stimulation, processing, and output. Customizable and adaptable, it caters to various research fields and applications. As the first open-source BCI software for end-users, UniBrain Speller brings a fresh perspective to the field, while maintaining strong academic ties and reliability.
+Brain-computer interfaces (BCIs) are at the forefront of human-computer interaction, yet many lack user-centric software. We've developed a unified BCI software platform addressing this gap, streamlining everything from data acquisition to command output. Utilizing the Steady-State Visual Evoked Potential (SSVEP) paradigm, our software achieves a Fitts’ transmission rate of 0.275 bps initially. Further, the Task-Related Component Analysis (TRCA) on our spelling keyboard hits a peak performance of 169.30±13.89 bpm within 0.3 seconds. Our research also highlights BCI's positive impact on perceptual psychology, with key metrics like usage window length correlating with enhanced user agency and body perception. The platform offers tailored BCI interactions, adaptable to diverse needs, from medical applications to entertainment. Embracing open-source principles, our software garners acclaim from the academic and medical communities.
 
 ## Features
 
-- Feature 1: Briefly describe this feature and its functionality.
-- Feature 2: Briefly describe this feature and its functionality.
-- Feature 3: Briefly describe this feature and its functionality.
+- Feature 1: User Information Management: The basic information interface of uniBrain Speller allows users to manage their personal details, ensuring a tailored experience.
+- 
+- Feature 2: Customizable Keyboard Interface: This interface offers a plethora of customization options, including keyboard layout, font size, and block size. Users can adjust these settings to their preference and preview the changes in real-time.
+- 
+- Feature 3: Hardware and Processing Parameters: The hardware interface requires precise settings like the collection system, electrode configuration, and downsampling rate for optimal software performance. The processing interface, on the other hand, offers various operational modes and parameter settings, allowing users to select the most suitable mode and parameters for their needs.
 
 ## Installation
 
