@@ -12,6 +12,7 @@ Brain-computer interfaces (BCIs) are at the forefront of human-computer interact
 
 - Feature 3: Hardware and Processing Parameters: The hardware interface requires precise settings like the collection system, electrode configuration, and downsampling rate for optimal software performance. The processing interface, on the other hand, offers various operational modes and parameter settings, allowing users to select the most suitable mode and parameters for their needs.
 
+
 ## Installation
 
 ### Prerequisites
@@ -24,19 +25,53 @@ Brain-computer interfaces (BCIs) are at the forefront of human-computer interact
    ```
    pip install -r requirements.txt
    ```
+4. Additionally, for some specific functionalities, you might need to install packages from statsmodel. Execute the following command:
+   ```
+   pip install git+https://github.com/statsmodels/statsmodels
+   ```
 
 After completing these steps, you should have all the necessary dependencies installed and be ready to use the software.
 
 ## Usage
 
-Provide examples and instructions on how to use your project, including any necessary code snippets.
+### 1. User Information Input
+Start by entering the basic user information to tailor the experience to the individual user.
 
-1. Example 1: Explain the example and its purpose.
-2. Example 2: Explain the example and its purpose.
+### 2. Keyboard Selection and Customization
+- Choose your desired keyboard. Each keyboard has specific functionalities.
+- The default settings allow for mouse control and typing.
+![User Interface](pictures/IMG_3326.jpg)
+![Mouse Control Experiment](pictures/mouse-control-experiment.png)
+- You can freely edit the position, output functions, and flicker parameters based on your preferences.
+![Keyboard Page](pictures/ui-page-keys-b.png)
+- For those who wish to add more functionalities, you can also add preset keyboards.
+- To ensure stable flickering, it's recommended to choose the half-screen option.
+  
+**Illustrations**:
+### 3. Dual-Host Synchronization
+Ensure you have two systems set up:
+- One system runs our software.
+- The other system operates with Curry (software) combined with Neuroscan for real-time data collection.
+
+### 4. Algorithm Selection
+- You have the option to choose between trained algorithms like TRCA or untrained algorithms like fbCCA.
+- We welcome contributors to add more algorithms to this repository.
+
+### 5. Training and Testing
+- If you opt for the TRCA training algorithm, you'll need to undergo at least three blocks of training before accessing the Test and Use features.
+- If you're using an untrained algorithm, you can directly proceed to use the software.
+
+希望这样可以满足您的需求！
 
 ## Contributing
 
-Provide guidelines for those who want to contribute to your project, including any specific processes, coding standards, or contact information.
+We welcome contributions from the community! If you're interested in enhancing the functionalities or have suggestions, feel free to make a pull request or open an issue.
+
+### Main Developers:
+- [**Shi Nan-Lin**](https://github.com/ShinlDiego) (THU)
+- [**Teh Kah Hann**](https://github.com/Kahhann92) (THU)
+
+We appreciate the hard work and dedication of our main developers and the entire community that supports this project.
 
 ## License
 
