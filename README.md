@@ -14,12 +14,17 @@ Utilizing the Steady-State Visual Evoked Potential (SSVEP) paradigm, our softwar
 
 ## Features
 
-- Feature 1: User Information Management: The basic information interface of uniBrain Speller allows users to manage their personal details, ensuring a tailored experience.
+- **User Information Management**: Manage personal details effortlessly with uniBrain Speller's dedicated interface for a tailored BCI experience.
 
-- Feature 2: Customizable Keyboard Interface: This interface offers a plethora of customization options, including keyboard layout, font size, and block size. Users can adjust these settings to their preference and preview the changes in real-time.
+- **Customizable Keyboard Interface**: Modify **keyboard layout**, **font size**, and **block size** as needed. Instantly preview changes to ensure the best user interaction.
 
-- Feature 3: Hardware and Processing Parameters: The hardware interface requires precise settings like the collection system, electrode configuration, and downsampling rate for optimal software performance. The processing interface, on the other hand, offers various operational modes and parameter settings, allowing users to select the most suitable mode and parameters for their needs.
+- **Hardware and Processing Parameters**: Set up the **eeg collection system** accurately for seamless software performance. The processing interface offers varied modes and settings for optimal BCI tuning.
 
+- **Stable SSVEP Paradigm**: Benefit from the reliable Steady-State Visual Evoked Potential (SSVEP) BCI paradigm for consistent brain-computer interactions.
+
+- **Advanced Algorithms**: Opt between the trained (TRCA) and untrained (fbCCA) algorithms, catering to different signal processing needs.
+
+- **Highly Adaptable**: uniBrain Speller is versatile, suitable for medical, research, or entertainment purposes, ensuring a BCI method that fits all user requirements.
 
 ## Installation
 
