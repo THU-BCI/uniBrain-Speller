@@ -51,6 +51,8 @@ To obtain the user manual, please send an email to kenttkh92@gmail.com. In your 
 
 ## Usage
 
+I
+
 ### 1. User Information Input
 Start by entering the basic user information to tailor the experience to the individual user.
 
