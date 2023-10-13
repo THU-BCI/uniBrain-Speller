@@ -54,8 +54,6 @@ To obtain the user manual, please send an email to kenttkh92@gmail.com. In your 
 ### 1. User Information Input
 Start by entering the basic user information to tailor the experience to the individual user.
 
-当然可以，我为您调整了图片的大小，使其涵盖半个总宽度：
-
 ### 2. Keyboard Selection and Customization
 - Choose your desired keyboard. Each keyboard has specific functionalities.
 - The default settings allow for mouse control and typing.
