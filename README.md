@@ -7,18 +7,25 @@ Brain-computer interfaces (BCIs) are at the forefront of human-computer interact
 ## Features
 
 - Feature 1: User Information Management: The basic information interface of uniBrain Speller allows users to manage their personal details, ensuring a tailored experience.
-- 
+
 - Feature 2: Customizable Keyboard Interface: This interface offers a plethora of customization options, including keyboard layout, font size, and block size. Users can adjust these settings to their preference and preview the changes in real-time.
-- 
+
 - Feature 3: Hardware and Processing Parameters: The hardware interface requires precise settings like the collection system, electrode configuration, and downsampling rate for optimal software performance. The processing interface, on the other hand, offers various operational modes and parameter settings, allowing users to select the most suitable mode and parameters for their needs.
 
 ## Installation
 
-Provide step-by-step instructions on how to install and set up your project, including any necessary dependencies.
+### Prerequisites
+- **Development Environment**: Ensure you have Python 3.8 installed on your system. If not, you can download and install it from the [official Python website](https://www.python.org/downloads/).
 
-1. Step 1
-2. Step 2
-3. Step 3
+### Installation Steps
+1. Clone the repository or download the source code to your local machine.
+2. Navigate to the directory containing the `requirements.txt` file.
+3. Run the following command to install the necessary packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+After completing these steps, you should have all the necessary dependencies installed and be ready to use the software.
 
 ## Usage
 
